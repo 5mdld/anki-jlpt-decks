@@ -4,9 +4,9 @@
 
 - ### **本卡组在 GitHub 和 AnkiWeb 上永久免费更新。闲鱼等平台的付费版本均为盗卖，请勿购买！**
 
-- 如果您希望表示支持，可以购买 iOS 版 AnkiMobile，或向 FSRS 算法作者叶峻峣捐赠（[GitHub Sponsors](https://github.com/sponsors/L-M-Sherlock) ｜ [ko-fi](https://ko-fi.com/jarrettye) ｜ [爱发电](https://afdian.com/a/jarrettye) ）。他为 Anki 排程算法的优化做出了重要贡献。
+- 如果您觉得本卡组对您的日语学习有所帮助，请在 [AnkiWeb](https://ankiweb.net/shared/info/832276382) **点赞**，或为本仓库点个 **Star**。
 
-- 如果您觉得本卡组对学习有所帮助，请在 [AnkiWeb](https://ankiweb.net/shared/info/832276382) **点赞**，或者给本仓库点个 **Star**，您的支持将是我持续更新的最大动力！
+  您也可以点此按钮 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld) 进行**捐赠**。您的支持将是我持续更新的最大动力！
 
 - 欢迎加入 Telegram Anki 日语交流群：[点此链接加入](https://t.me/+N7bNc8-BpqJjZmQ1)。
 
@@ -354,7 +354,7 @@ const dictOptions = {
 
 | 需求                                     | 牌组选项 → 音频          | `playback` 参数 | 正面模板中的 `{{ VocabAudio }}` |
 | ---------------------------------------- | ------------------------ | --------------- | ------------------------------- |
-| 正／背面都自动播放（单词＋例句）         | 关闭「不要自动播放音频」 | `'default'`     | 保留                            |
+| 正／背面都自动播放全部音频               | 关闭「不要自动播放音频」 | `'default'`     | 保留                            |
 | 正面自动播放＋背面仅自动播放单词         | 关闭「不要自动播放音频」 | `'force'`       | 保留                            |
 | 正面手动播放＋背面仅自动播放单词（默认） | 开启「不要自动播放音频」 | `'force'`       | 保留                            |
 | 正面手动播放＋背面手动播放               | 开启「不要自动播放音频」 | `'default'`     | 保留                            |
