@@ -6,7 +6,7 @@
 
 - 如果您觉得本卡组对您的日语学习有所帮助，请在 [AnkiWeb](https://ankiweb.net/shared/info/832276382) **点赞**，或为本仓库点个 **Star**。
 
-  您也可以点此按钮 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld) 进行**捐赠**。您的支持将是我持续更新的最大动力！
+  您也可以点此按钮 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld) 进行**捐赠**。您的支持是我持续更新的最大动力！
 
 - 欢迎加入 Telegram Anki 日语交流群：[点此链接加入](https://t.me/+N7bNc8-BpqJjZmQ1)。
 
