@@ -531,14 +531,7 @@ tts: {
   
   1. 下载并安装字体配置文件：[下载链接](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig)
   
-  2. 将字体名称 `UD Digi Kyokasho NK-R` 放在日语的 `font-family` 的首位：
-  
-     ```css
-     :lang(ja) {
-       font-family: 'UD Digi Kyokasho NK-R', 'Source Han Serif JP', 'Source Han Serif CN', serif;
-     }
-     ```
-  3. 取消注释以下代码的 `transform: 0;` 部分：
+  2. 取消注释以下代码的 `transform: 0;` 部分：
      ```css
      /* --- iOS 若安装教科书字体开启以下样式 --- */
      .ios .VocabKanji rt,
@@ -551,7 +544,7 @@ tts: {
 
 - **在 iOS 端使用自定义字体时，Ruby（ふりがな）行与汉字行重叠**
   
-  完全替换卡组自带字体后可能会出现这种情况，请注释掉以下代码中 `transform: translateY(0.6em);` 部分：
+  请注释掉以下代码中 `transform: translateY(0.6em);` 部分：
 
 ```css
 /* --- iOS 思源宋体振假名高度修复 --- */
