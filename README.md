@@ -1,4 +1,4 @@
-# 【简体・繁體中文】【egg rolls】JLPT N1～N5 单词 + 补充（含语音、例句）v2
+# 【简体・繁體中文】【egg rolls】JLPT N1～N5 单词 + 补充（含语音、例句）v3
 
 ## 前言
 
@@ -14,7 +14,7 @@
 
 ## 项目介绍
 
-- 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级以及部分额外补充词汇，共计约 **14,600 个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
+- 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级以及部分额外补充词汇，共计约 **10,000个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
 
 - 支援繁體中文，詳細設定方法請參考 [此處說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
 
@@ -35,18 +35,23 @@
 
 ### 单词
 
-- **总单词数**：约 14,600 个。
-  - JLPT N1～N5 单词：约 12,500 个（`25.05.19` 版本新增约 2000 个）。
+- **概要**：基于 2010 年改制后～ 2024 年 12 月的 JLPT 真题文本，提取并分级了约 10,000 个单词。
   
-  - 补充词汇（非 JLPT）：约 2,100 个，统一归入「N1-补充」。
+- **单词顺序：**参考 `Order` 字段。
+  
+  - N4+N5 单词按照主观判断从易到难进行排序。
+  
+  - N3 及以上单词按照 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 的词频升序排序。
   
 - **N3 以上单词的分类**：
 
-  - **必考**：出现频率高且重要的单词。
+  - **高频**：在 JLPT 真题中出现过 3 次以上的单词。
 
-  - **核心**：基础但在常见场景中出现频率相对较低的单词。
+  - **中频**：在 JLPT 真题中出现过 2 次的单词。
+  
+  - **低频**：在 JLPT 真题中出现过 1 次的单词。
 
-> 以上等级和分类仅供参考，如发现明显不符的词汇，欢迎反馈。
+> 以上排序和分类仅供参考，如有问题，欢迎反馈。
 
 ------
 
@@ -68,9 +73,9 @@
 
 ### 音频
 
-- **单词音频**：大部分为真人播音员录制。
+- **单词音频**：绝大部分为真人播音员录制。
 
-- **例句音频**：采用 [VOICEPEAK](https://www.ah-soft.com/voice/6nare/index.html) 软件生成的高质量机器语音，已进行人工校对。
+- **例句音频**：采用 [VOICEPEAK](https://www.ah-soft.com/voice/6nare/index.html) 生成的高质量情感机器语音，已进行人工校对。
 
 - **音频按钮说明**：
 
@@ -84,7 +89,7 @@
 
 | 标签示例      | 含义与说明                                                                  |
 | --------- | ---------------------------------------------------------------------- |
-| N3必考      | 单词的 JLPT 等级和重要性分类                                                      |
+| N3高频      | 单词的 JLPT 等级和重要度                                                      |
 | ②         | 单词音调标记，参考：[日语声调说明](https://www.jp-lab.com/zh/pitch-accent-explanation) |
 | [他動1]    | 单词词性说明；<br />动词分类：`1` = 五段动词、`2` = 上一段／下一段动词、`3` = カ変／サ変动词             |
 | [補]      | 补充说明或注意事项                                                              |
@@ -136,7 +141,7 @@
 
    请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
    
-   [下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/NEW-JLPT.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/NEW-JLPT.apkg)
+   [下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
 
 ------
 
@@ -144,7 +149,7 @@
 
   - 打开 Anki，将下载的 `.apkg` 文件导入。
    
-  - **首次导入**时，建议将「导入所有牌组预设配置」选项设置为 `打开`（如下图绿框所示），以应用本卡组提供的优化预设（名为「NEW-JLPT」）。
+  - **首次导入**时，建议将「导入所有牌组预设配置」选项设置为 `打开`（如下图绿框所示），以应用本卡组提供的优化预设（名为「eggrolls-JLPT10k-v3」）。
     
     > ⚠️ 受限于 Anki 本身的机制，部分预设无法自动导入，请参阅后续的「4. 修改牌组选项」手动调整。
 
@@ -194,10 +199,28 @@
     - **示例 2**：若已导入了版本为 `v25.01.01` 的卡组，但部分卡片仍标记旧版本或缺少版本标签，请在 Anki 搜索框中输入：
 
     ```
-    deck:NEW-JLPT -tag:NEW-JLPT-v2::v25.01.01
+    deck:eggrolls-JLPT10k-v3 -tag:eggrolls-JLPT10k-v3::v25.01.01
     ```
 
     搜索到的卡片即为新版本已移除的内容，请自行处理（可以删除卡片或添加 `del` 标签来避免更新检测）。
+
+------
+
+7. **从 v2 版本（25.07.27 及以前）升级到 v3 版本（25.09.03 及以后）**
+
+   v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更新。请参考以下说明迁移复习记录（仅支持桌面端）：
+
+    a. 安装 [Transfer Scheduling Info Advanced ](https://ankiweb.net/shared/info/1249258442)插件（代码 `1249258442` ）
+   
+    ![01](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903HGGaa3.png)
+   
+    ![02](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903OdHcN5.png)
+       
+    b. 按图示进行迁移
+    ![03](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903Cb6Ji0.png)
+       
+    c. 搜索 v2 版本卡组中和 v3 版本重复的卡片
+    ![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
 
 ------
 
@@ -352,19 +375,20 @@ const dictOptions = {
 <details>
 <summary>点击展开／折叠</summary><br>
 
-| 需求                                     | 牌组选项 → 音频          | `playback` 参数 | 正面模板中的 `{{ VocabAudio }}` |
-| ---------------------------------------- | ------------------------ | --------------- | ------------------------------- |
-| 正／背面都自动播放全部音频               | 关闭「不要自动播放音频」 | `'default'`     | 保留                            |
-| 正面自动播放＋背面仅自动播放单词         | 关闭「不要自动播放音频」 | `'force'`       | 保留                            |
-| 正面手动播放＋背面仅自动播放单词（默认） | 开启「不要自动播放音频」 | `'force'`       | 保留                            |
-| 正面手动播放＋背面手动播放               | 开启「不要自动播放音频」 | `'default'`     | 保留                            |
-| 正面不发音＋背面自动播放（单词＋例句）   | 关闭「不要自动播放音频」 | `'default'`     | **删除** `{{ VocabAudio }}`     |
-| 正面不发音＋背面仅自动播放单词           | 开启「不要自动播放音频」 | `'force'`       | **删除** `{{ VocabAudio }}`     |
-| 正／背面都不发音                         | 开启「不要自动播放音频」 | `'default'`     | **删除** `{{ VocabAudio }}`     |
+| 需求                                     | 牌组选项 → 音频          | `playback` 参数 | 是否补充正面单词发音 |
+| ---------------------------------------- | ------------------------ | --------------- | -------------------- |
+| 正／背面都自动播放全部音频               | 关闭「不要自动播放音频」 | `'default'`     | 是                   |
+| 正面自动播放＋背面仅自动播放单词         | 关闭「不要自动播放音频」 | `'force'`       | 是                   |
+| 正面手动播放＋背面仅自动播放单词（默认） | 开启「不要自动播放音频」 | `'force'`       | 是                   |
+| 正面手动播放＋背面手动播放               | 开启「不要自动播放音频」 | `'default'`     | 是                   |
+| 正面不发音＋背面自动播放（单词＋例句）   | 关闭「不要自动播放音频」 | `'default'`     | 否                   |
+| 正面不发音＋背面仅自动播放单词           | 开启「不要自动播放音频」 | `'force'`       | 否                   |
+| 正／背面都不发音                         | 开启「不要自动播放音频」 | `'default'`     | 否                   |
 
 ```html
 playback: 'force',    // 背面播放设置: 'default' 为使用系统设置；'force' 为强制只播放单词音频
 ```
+补充正面单词发音：v3 版本移除了正面单词发音。如果需要正面单词发音，在正面模板中搜索 `<div class="VocabAudio"></div>` 并替换成 `<div class="VocabAudio">{{VocabAudio}}</div>` 即可。
 
 </details>
 
@@ -452,7 +476,7 @@ tts: {
   domain: [
     // 可以添加更多域名，按顺序依次尝试播放
     'https://anki.0w0.live/',
-    'https://ms-ra-forwarder-for-ifreetime-v9q1.vercel.app/',
+    'https://ms-ra-forwarder-for-ifreetime-pbbu.vercel.app/',
   ],
   params: {
     voiceName: 'ja-JP-KeitaNeural,ja-JP-NanamiNeural', // 语音为多个时随机选择一个
