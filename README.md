@@ -37,8 +37,7 @@
 
 - **概要**：基于 2010 年改制后～ 2024 年 12 月的 JLPT 真题文本，提取并分级了约 10,000 个单词。
   
-- **单词顺序：**参考 `Order` 字段。
-  
+- **单词顺序：** 参考 `Order` 字段。
   - N4+N5 单词按照主观判断从易到难进行排序。
   
   - N3 及以上单词按照 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 的词频升序排序。
