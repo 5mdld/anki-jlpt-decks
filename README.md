@@ -106,120 +106,131 @@
 
 ## 如何使用
 
-0. **资源推荐**
+### **资源推荐**
 
-  - Anki 官方使用手册：[简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/intro.html) ｜ [English](https://docs.ankiweb.net/)
-   
-  - 卡组迁移学习记录插件（仅桌面端）：[Transfer Scheduling Info Advanced](https://ankiweb.net/shared/info/1249258442)
-   
-  - 更新卡组时保护自定义字段内容插件（仅桌面端）：[Special Fields](https://ankiweb.net/shared/info/1102281552)
-
-------
-
-1. **安装 Anki**
-
-  - Windows／macOS／Linux：Anki
-
-    [AnkiWeb 官网](https://apps.ankiweb.net/) ｜ [GitHub](https://github.com/ankitects/anki/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankitects/anki/releases/latest)
-
-  - iOS／iPadOS：AnkiMobile Flashcards
-
-    [App Store](https://apps.apple.com/jp/app/ankimobile-flashcards/id373493387)
-
-    > ⚠️ 需付费，价格约为 24.99美元／168人民币／4000日元／790新台幣／188港幣。
-
-  - Android：AnkiDroid
-
-    [Play Store](https://play.google.com/store/apps/details?id=com.ichi2.anki) ｜ [GitHub](https://github.com/ankidroid/Anki-Android/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankidroid/Anki-Android/releases/latest)
-
-    > ⚠️ 请勿使用由「Anki 中国」提供的 AnkiDroid（v2.16.0beta2），存在兼容性问题！
+- Anki 官方使用手册：[简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/intro.html) ｜ [English](https://docs.ankiweb.net/)
+  
+- 卡组迁移学习记录插件（仅桌面端）：[Transfer Scheduling Info Advanced](https://ankiweb.net/shared/info/1249258442)
+  
+- 更新卡组时保护自定义字段内容插件（仅桌面端）：[Special Fields](https://ankiweb.net/shared/info/1102281552)
 
 ------
 
-2. **下载卡组**
+### **安装 Anki**
 
-   请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
-   
-   [下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
+- Windows／macOS／Linux：Anki
+
+  [AnkiWeb 官网](https://apps.ankiweb.net/) ｜ [GitHub](https://github.com/ankitects/anki/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankitects/anki/releases/latest)
+
+- iOS／iPadOS：AnkiMobile Flashcards
+
+  [App Store](https://apps.apple.com/jp/app/ankimobile-flashcards/id373493387)
+
+  > ⚠️ 需付费，价格约为 24.99美元／168人民币／4000日元／790新台幣／188港幣。
+
+- Android：AnkiDroid
+
+  [Play Store](https://play.google.com/store/apps/details?id=com.ichi2.anki) ｜ [GitHub](https://github.com/ankidroid/Anki-Android/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankidroid/Anki-Android/releases/latest)
+
+  > ⚠️ 请勿使用由「Anki 中国」提供的 AnkiDroid（v2.16.0beta2），存在兼容性问题！
 
 ------
 
-3. **导入卡组**
+### **下载卡组**
 
-  - 打开 Anki，将下载的 `.apkg` 文件导入。
-   
-  - **首次导入**时，建议将「导入所有牌组预设配置」选项设置为 `打开`（如下图绿框所示），以应用本卡组提供的优化预设（名为「eggrolls-JLPT10k-v3」）。
-    
-    > ⚠️ 受限于 Anki 本身的机制，部分预设无法自动导入，请参阅后续的「4. 修改牌组选项」手动调整。
+请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
+
+[下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
+
+------
+
+### **导入卡组**
+
+- 打开 Anki，将下载的 `.apkg` 文件导入。
+  
+- **首次导入**时，建议将「导入所有牌组预设配置」选项设置为 `打开`（如下图绿框所示），以应用本卡组提供的优化预设（名为「eggrolls-JLPT10k-v3」）。
+  
+  > ⚠️ 受限于 Anki 本身的机制，部分预设无法自动导入，请参阅后续的「修改牌组选项」手动调整。
 
 ![导入选项](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250527Mzfbc2.png)
 
 ------
 
-4. **修改牌组选项**
+### **修改牌组选项**
 
-   > 🎬 牌组选项位置视频教程：[Android](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314Wwzrtj.mp4) ｜ [iOS](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/202503144dcecY.mp4) ｜ [macOS／Windows](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314s2AMCN.mp4)
+> 🎬 牌组选项位置视频教程：[Android](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314Wwzrtj.mp4) ｜ [iOS](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/202503144dcecY.mp4) ｜ [macOS／Windows](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314s2AMCN.mp4)
 
-   请点击 Anki 中牌组旁的 ⚙️ 图标打开牌组选项界面，并参考以下图片进行设置：
+请点击 Anki 中牌组旁的 ⚙️ 图标打开牌组选项界面，并参考以下图片进行设置：
 
 ![deck options](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314HpoTxy.png)
 
 ------
 
-5. **开启同步（可选）**
+### **开启同步（可选）**
 
-   注册并登录 [AnkiWeb 账号](https://ankiweb.net/account/signup)，即可实现多设备间的学习进度同步和云端备份。
+注册并登录 [AnkiWeb 账号](https://ankiweb.net/account/signup)，即可实现多设备间的学习进度同步和云端备份。
 
 ------
 
-6. **更新卡组（可选）**
+### **更新卡组（可选）**
 
-    > ⚠️ **更新前务必进行备份！**
+> ⚠️ **更新前务必进行备份！**
 
-  - 为避免频繁更新干扰学习，如无重大 Bug，本卡组稳定版（Latest）一般每 **1 至 2 个月**发布一次；日常的小幅修正则通过预发布版本（Pre-release）不定期推送。
+<details>
+<summary>点击展开／折叠</summary>
 
-  - 更新方法：下载最新的 `.apkg` 文件导入 Anki，**不影响学习进度**。
+为避免频繁更新干扰学习，如无重大 Bug，本卡组稳定版（Latest）一般每 **1 至 2 个月**发布一次；日常的小幅修正通过预发布版本（Pre-release）不定期推送。
 
-  - 导入时，请在 Anki「导入选项」中进行如下设置（如下图红框所示）：
+更新方法：下载最新的 `.apkg` 文件导入 Anki，**不影响学习进度**。
 
-    - 「合并笔记模板」设为 `打开`
-    - 「更新笔记」和「更新笔记模板」均设为 `始终`
+导入时，请在 Anki「导入选项」中进行如下设置（如下图红框所示）：
+
+- 「合并笔记模板」设为 `打开`
+- 「更新笔记」和「更新笔记模板」均设为 `始终`
 
 ![更新选项](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250527yrnhsY.png)
 
-  - 导入更新卡组会覆盖本地对卡组所做的所有自定义修改（如卡片内容、标签、字段等）。
+导入更新卡组会覆盖本地对卡组所做的所有自定义修改（如卡片内容、标签、字段等）。
 
-    若希望保留自定义修改的内容，请勿直接更新卡组，推荐使用代码仓库中的 `notes.csv` 文件和 `media` 文件夹手动比对并解决冲突后再更新。
+若希望保留自定义修改的内容，请勿直接更新卡组，推荐使用代码仓库中的 `notes.csv` 文件和 `media` 文件夹手动比对并解决冲突后再更新。
 
-  - 由于 Anki 功能限制，子牌组结构调整及已删除的卡片无法自动同步，需手动管理：
+由于 Anki 功能限制，子牌组结构调整及已删除的卡片无法自动同步，需手动管理：
 
-    - **示例 1**：若发现某卡片位于 `N3-必考` 牌组，但标签却为 `N2-核心`，您可将该卡片手动迁移至 `N2-核心` 牌组。
+- **示例 1**：若发现某卡片位于 `N3-必考` 牌组，但标签却为 `N2-核心`，您可将该卡片手动迁移至 `N2-核心` 牌组。
 
-    - **示例 2**：若已导入了版本为 `v25.01.01` 的卡组，但部分卡片仍标记旧版本或缺少版本标签，请在 Anki 搜索框中输入：
+- **示例 2**：若已导入了版本为 `v25.01.01` 的卡组，但部分卡片仍标记旧版本或缺少版本标签，请在 Anki 搜索框中输入：
 
-    ```
-    deck:eggrolls-JLPT10k-v3 -tag:eggrolls-JLPT10k-v3::v25.01.01
-    ```
+```
+deck:eggrolls-JLPT10k-v3 -tag:eggrolls-JLPT10k-v3::v25.01.01
+```
 
-    搜索到的卡片即为新版本已移除的内容，请自行处理（可以删除卡片或添加 `del` 标签来避免更新检测）。
+搜索到的卡片即为新版本已移除的内容，请自行处理（可以删除卡片或添加 `del` 标签来避免更新检测）。
+
+</details>
 
 ------
 
-7. #### **从 v2 版本（25.07.27 及以前）升级到 v3 版本（25.09.03 及以后）**
+#### **从 v2 版本（25.07.27 及以前）升级到 v3 版本（25.09.03 及以后）**
 
-   v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更新。请参考以下说明迁移复习记录（仅支持桌面端）：
+v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更新。请参考以下说明迁移复习记录（仅支持桌面端）：
 
-    a. 安装 [Transfer Scheduling Info Advanced ](https://ankiweb.net/shared/info/1249258442)插件（代码 `1249258442` ）
-   
-    ![01](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903HGGaa3.png)
-   
-    ![02](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903OdHcN5.png)
-       
-    b. 按图示进行迁移
-    ![03](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903Cb6Ji0.png)
-       
-    c. 搜索 v2 版本卡组中和 v3 版本重复的卡片
-    ![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
+<details>
+<summary>点击展开／折叠</summary>
+
+1. 安装 <a href="https://ankiweb.net/shared/info/1249258442">Transfer Scheduling Info Advanced</a> 插件（代码 <code>1249258442</code> ）
+
+![01](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903HGGaa3.png)
+
+![02](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903OdHcN5.png)
+
+2. 按图示进行迁移  
+![03](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903Cb6Ji0.png)
+
+3. 搜索 v2 版本卡组中和 v3 版本重复的卡片  
+![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
+
+</details>
+
 
 ------
 
