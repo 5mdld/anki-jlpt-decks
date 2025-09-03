@@ -216,9 +216,9 @@ deck:eggrolls-JLPT10k-v3 -tag:eggrolls-JLPT10k-v3::v25.01.01
 v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更新。请参考以下说明迁移复习记录（仅支持桌面端）：
 
 <details>
-<summary>点击展开／折叠</summary>
+<summary>点击展开／折叠</summary><br>
 
-1. 安装 <a href="https://ankiweb.net/shared/info/1249258442">Transfer Scheduling Info Advanced</a> 插件（代码 <code>1249258442</code> ）
+1. 安装 [Transfer Scheduling Info Advanced](https://ankiweb.net/shared/info/1249258442) 插件（代码 `1249258442` ）
 
 ![01](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903HGGaa3.png)
 
@@ -231,7 +231,6 @@ v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更�
 ![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
 
 </details>
-
 
 ------
 
