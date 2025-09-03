@@ -197,7 +197,7 @@
 
 由于 Anki 功能限制，子牌组结构调整及已删除的卡片无法自动同步，需手动管理：
 
-- **示例 1**：若发现某卡片位于 `N3-必考` 牌组，但标签却为 `N2-核心`，您可将该卡片手动迁移至 `N2-核心` 牌组。
+- **示例 1**：若发现某卡片位于 `N3高频` 牌组，但标签却为 `N2高频`，您可根据标签将该卡片手动迁移正确的牌组。
 
 - **示例 2**：若已导入了版本为 `v25.01.01` 的卡组，但部分卡片仍标记旧版本或缺少版本标签，请在 Anki 搜索框中输入：
 
@@ -236,79 +236,79 @@ v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更�
 
 ## 常见问题
 
-- **卡组导入失败／显示异常／同步时报错**
+### **卡组导入失败／显示异常／同步时报错**
 
-  本卡组不保证兼容旧版 Anki 及其他类似应用（如 AnkiApp、AnkiPro 等）。请下载并使用官方最新版 Anki。
+本卡组不保证兼容旧版 Anki 及其他类似应用（如 AnkiApp、AnkiPro 等）。请下载并使用官方最新版 Anki。
 
-  特别提示：本卡组与「Anki 中国」提供的旧版 AnkiDroid（v2.16.0beta2）不兼容。请使用最新版 AnkiDroid。
+特别提示：本卡组与「Anki 中国」提供的旧版 AnkiDroid（v2.16.0beta2）不兼容。请使用最新版 AnkiDroid。
 
 ------
 
-- **【AnkiDroid】卡组导入速度慢**
-  - **已知问题**
+### **【AnkiDroid】卡组导入速度慢**
+
+- **已知问题**
+
+  在 Android 15 及以上系统中，导入包含大量媒体的卡片时，导入速度明显变慢。
+
+- **解决方案**
   
-    - 在 Android 15 及以上系统中，导入包含大量媒体的卡片时，导入速度明显变慢。
+  - 先在其他平台导入卡组，然后同步到 AnkiDroid。
   
-  - **解决方案**
-    
-    - 先在其他平台导入卡组，然后同步到 AnkiDroid。
-    
-    - 等待 Android 与 AnkiDroid 官方的后续修复。
-  
+  - 等待 Android 与 AnkiDroid 官方的后续修复。
 
 ------
 
-- **【AnkiDroid】应用内下载的卡组后缀为 `bin`**
+### **【AnkiDroid】应用内下载的卡组后缀为 `bin`**
 
-  请将 AnkiDroid 更新至 v2.20.1 或更高版本后重新下载，或使用其他方式下载。
-
-------
-
-- **单词例句无法发音／字体显示不全／缺少媒体文件／同步慢／同步失败**
-
-  一般来说都是媒体文件未完全同步导致的：
-
-  - 导入卡组并登录 AnkiWeb 后，应用会自动进行媒体文件同步。首次同步需上传／下载大量文件（尤其是音频），耗时可能较长（数十分钟）。
-
-  - 如需在其他设备上使用该卡组，请**先在**已下载卡组的设备上完成上传同步，**再在**目标设备进行下载同步。也可在新设备上手动导入卡组，以加快首次同步速度。
-  
-  - 同步时，请保持 Anki 处于前台并保持屏幕常亮（移动端）；如有需要，可使用网络代理（翻墙）工具来提升同步速度。
+请将 AnkiDroid 更新至 v2.20.1 或更高版本后重新下载，或使用其他方式下载。
 
 ------
 
-- **【Windows】卡片切换有延迟**
+### **单词例句无法发音／字体显示不全／缺少媒体文件／同步慢／同步失败**
 
-  在 Anki 的「设置」 →「显示驱动」中，尝试选择 `Software` 或 `OpenGL`。
+一般来说都是媒体文件未完全同步导致的：
 
-------
+- 导入卡组并登录 AnkiWeb 后，应用会自动进行媒体文件同步。首次同步需上传／下载大量文件（尤其是音频），耗时可能较长（数十分钟）。
 
-- **卡片正面的单词上有假名标注**
+- 如需在其他设备上使用该卡组，请**先在**已下载卡组的设备上完成上传同步，**再在**目标设备进行下载同步。也可在新设备上手动导入卡组，以加快首次同步速度。
 
-  本卡组仅针对「[常用漢字表](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/pdf/joyokanjihyo_20101130.pdf)」范围外的词汇添加了假名标注，并非所有单词都有，一般情况下无需隐藏；如需隐藏，请参考高级选项中的 [控制正面单词显示模式](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E6%8E%A7%E5%88%B6%E6%AD%A3%E9%9D%A2%E5%8D%95%E8%AF%8D%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F)。
-
-------
-
-- **【AnkiWeb】提示「Daily limit exceeded; please try again tomorrow.」**
-
-  表示同一 IP 在 24 小时内已下载超过 25 个卡组。请切换 IP 地址或等待 24 小时后再试。
+- 同步时，请保持 Anki 处于前台并保持屏幕常亮（移动端）；如有需要，可使用网络代理（翻墙）工具来提升同步速度。
 
 ------
 
-- **【Windows／macOS】卡组的词典跳转与反馈功能失效**
+### **【Windows】卡片切换有延迟**
 
-  Anki 桌面端 25.02.1 版本的安全更新意外破坏了卡组的词典跳转与反馈等功能。请下载使用最新版本的 Anki。
-
-------
-
-- **已经更新到最新版卡组，但部分卡片仍为旧版**
-
-  请参考前文「[如何使用](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8)」中「6. 更新卡组（可选）」最后部分的说明。
+在 Anki 的「设置」 →「显示驱动」中，尝试选择 `Software` 或 `OpenGL`。
 
 ------
 
-- **一些が行浊音（比如「だいがく」中的「が」）的发音听起来有点奇怪**
+### **卡片正面的单词上有假名标注**
 
-  请参考：[鼻浊音](https://zh.wikipedia.org/wiki/%E9%BC%BB%E6%BF%81%E9%9F%B3)。
+本卡组仅针对「[常用漢字表](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/pdf/joyokanjihyo_20101130.pdf)」范围外的词汇添加了假名标注，并非所有单词都有，一般情况下无需隐藏；如需隐藏，请参考高级选项中的 [控制正面单词显示模式](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E6%8E%A7%E5%88%B6%E6%AD%A3%E9%9D%A2%E5%8D%95%E8%AF%8D%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F)。
+
+------
+
+### **【AnkiWeb】提示「Daily limit exceeded; please try again tomorrow.」**
+
+表示同一 IP 在 24 小时内已下载超过 25 个卡组。请切换 IP 地址或等待 24 小时后再试。
+
+------
+
+### **【Windows／macOS】卡组的词典跳转与反馈功能失效**
+
+Anki 桌面端 25.02.1 版本的安全更新意外破坏了卡组的词典跳转与反馈等功能。请下载使用最新版本的 Anki。
+
+------
+
+### **已经更新到最新版卡组，但部分卡片仍为旧版**
+
+请参考前文「[如何使用](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8)」中「6. 更新卡组（可选）」最后部分的说明。
+
+------
+
+### **一些が行浊音听起来很奇怪（比如「だいがく」中的「が」听起来像「な」）**
+
+这不是错误，请参考：[鼻浊音](https://zh.wikipedia.org/wiki/%E9%BC%BB%E6%BF%81%E9%9F%B3)。
 
 ------
 
@@ -392,13 +392,14 @@ const dictOptions = {
 | 正面手动播放＋背面仅自动播放单词 | 开启「不要自动播放音频」 | `'force'`       | 是                   |
 | 正面手动播放＋背面手动播放               | 开启「不要自动播放音频」 | `'default'`     | 是                   |
 | 正面不发音＋背面自动播放（单词＋例句）   | 关闭「不要自动播放音频」 | `'default'`     | 否                   |
-| 正面不发音＋背面仅自动播放单词（默认）           | 开启「不要自动播放音频」 | `'force'`       | 否                   |
+| 正面不发音＋背面仅自动播放单词（**默认**）       | 开启「不要自动播放音频」 | `'force'`       | 否                   |
 | 正／背面都不发音                         | 开启「不要自动播放音频」 | `'default'`     | 否                   |
 
 ```html
 playback: 'force',    // 背面播放设置: 'default' 为使用系统设置；'force' 为强制只播放单词音频
 ```
-补充正面单词发音：v3 版本移除了正面单词发音。如果需要正面单词发音，在正面模板中搜索 `<div class="VocabAudio"></div>` 并替换成 `<div class="VocabAudio">{{VocabAudio}}</div>` 即可。
+
+**补充正面单词发音**：在 v3 版本中，正面单词发音功能被移除。如需恢复，请在正面模板中搜索 `<div class="VocabAudio"></div>`，并替换为 `<div class="VocabAudio">{{VocabAudio}}</div>`。
 
 </details>
 
@@ -485,8 +486,8 @@ tts: {
   hotkey: 'G',        // 播放快捷键，仅支持桌面端
   domain: [
     // 可以添加更多域名，按顺序依次尝试播放
-    'https://anki.0w0.live/',
-    'https://ms-ra-forwarder-for-ifreetime-pbbu.vercel.app/',
+    'TTS Server 1',
+    'TTS Server 2',
   ],
   params: {
     voiceName: 'ja-JP-KeitaNeural,ja-JP-NanamiNeural', // 语音为多个时随机选择一个
@@ -627,9 +628,7 @@ tts: {
   
 - `uovkm` 的[《综合日语第三版》第一册～第四册单词卡组](https://ankiweb.net/shared/by-author/516873037)。
 
-- `菜鸡` 的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f) ，推荐花几个小时读一读，能少走几百小时的弯路。
-
-  基于二语习得理论的日语学习 QQ 群：[点此链接加入](https://qm.qq.com/q/Iy7QuEz5WQ)（群号 `830058869`）。
+- `菜鸡` 的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f) ，推荐一读。相关 QQ 讨论群：`830058869`。
 
 - `Z` 的语言学习论坛： [Campfirium](https://campfirium.info)。
 
