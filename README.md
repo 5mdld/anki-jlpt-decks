@@ -24,7 +24,7 @@
 
 ## 预览图
 
-![预览图](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311WuXSuX.png)
+![预览图](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903HrFjWb.png)
 
 ------
 
@@ -208,6 +208,8 @@
 7. #### **从 v2 版本（25.07.27 及以前）升级到 v3 版本（25.09.03 及以后）**
 
    v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更新。请参考以下说明迁移复习记录（仅支持桌面端）：
+<details>
+<summary>点击展开／折叠</summary><br>
 
     a. 安装 [Transfer Scheduling Info Advanced ](https://ankiweb.net/shared/info/1249258442)插件（代码 `1249258442` ）
    
@@ -220,6 +222,7 @@
        
     c. 搜索 v2 版本卡组中和 v3 版本重复的卡片
     ![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
+</details>
 
 ------
 
