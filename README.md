@@ -4,6 +4,8 @@
 
 - ### **本卡组在 GitHub 和 AnkiWeb 上永久免费更新。闲鱼等平台的付费版本均为盗卖，请勿购买！**
 
+- ### v3 版本（25.09.03 及以后）与 v2 版本（25.07.27 及以前）相互独立，无法覆盖更新，请参考 [说明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BB%8E-v2-%E7%89%88%E6%9C%AC250727-%E5%8F%8A%E4%BB%A5%E5%89%8D%E5%8D%87%E7%BA%A7%E5%88%B0-v3-%E7%89%88%E6%9C%AC250903-%E5%8F%8A%E4%BB%A5%E5%90%8E) 进行复习记录迁移。
+
 - 如果您觉得本卡组对您的日语学习有所帮助，请在 [AnkiWeb](https://ankiweb.net/shared/info/832276382) **点赞**，或为本仓库点个 **Star**。
 
   您也可以点此按钮 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld) 进行**捐赠**。您的支持是我持续更新的最大动力！
@@ -14,9 +16,9 @@
 
 ## 项目介绍
 
-- 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级，共计约 **10,000个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
+- 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级，共计约 **10,000 个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
 
-- 支援繁體中文，詳細設定方法請參考 [此處說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
+- 支援繁體中文，詳細設定方法請參考 [說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
 
 - 我的其他 Anki 卡组和插件可访问：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)。
 
@@ -32,13 +34,12 @@
 
 <details>
 <summary>点击展开／折叠</summary>
-
 ### 单词
 
-- **概要**：基于 2010 年改制后～ 2024 年 12 月的 JLPT 真题文本，提取并分级了约 10,000 个单词。
+- **概要**：基于 2010 年改制后～2024 年 12 月的 JLPT 真题文本，提取并分级了约 10,000 个单词。
   
 - **单词顺序：** 参考 `Order` 字段。
-  - N4+N5 单词按照主观判断从易到难进行排序。
+  - N4 及 N5 单词按照主观判断从易到难进行排序。
   
   - N3 及以上单词按照 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 的词频升序排序。
   
@@ -77,10 +78,9 @@
 - **例句音频**：采用 [VOICEPEAK](https://www.ah-soft.com/voice/6nare/index.html) 生成的高质量情感机器语音，已进行人工校对。
 
 - **音频按钮说明**：
-
-  - **黑白 ▶️**：卡组自带本地音频。
-
-  - **紫色 ▶️**：自动生成的在线音频（请不要反馈相关错误）。
+- **黑白 ▶️**：卡组自带本地音频。
+  
+- **紫色 ▶️**：自动生成的在线音频（请不要反馈相关错误）。
 
 ------
 
@@ -95,8 +95,8 @@
 | [例]      | 例句                                                                     |
 | [関]      | 同义词／关联词                                                                |
 | [対]      | 反义词                                                                    |
-| 🔍        | 跳转外部词典或网页查词（支持自定义）                                                     |
-| v25.01.01 | 卡片版本号（即最后一次更新日期）                                                       |
+| 🔍        | 跳转外部词典或网页查词（可自定义）                                                    |
+| v25.01.01 | 卡片版本号（最后一次更新日期）                                                       |
 | 反馈        | 若本地卡组为最新版本，点击后跳转至 GitHub Issues 反馈页面；<br />若本地卡组非最新版本，则跳转至最新版本的下载页面    |
 | 🎉        | 检测到可更新的新版本卡组                                                           |
 
@@ -136,17 +136,14 @@
 
 ------
 
-### **下载卡组**
+### **下载并导入**
 
-请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
+- 请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
 
-[下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
+  [下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
 
-------
 
-### **导入卡组**
-
-- 打开 Anki，将下载的 `.apkg` 文件导入。
+- 打开 Anki，导入已下载的 `.apkg` 文件。
   
 - **首次导入**时，建议将「导入所有牌组预设配置」选项设置为 `打开`（如下图绿框所示），以应用本卡组提供的优化预设（名为「eggrolls-JLPT10k-v3」）。
   
@@ -227,7 +224,7 @@ v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更�
 ![02](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903OdHcN5.png)
 
 2. 按图示进行迁移  
-![03](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903Cb6Ji0.png)
+![03](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903R44aEt.png)
 
 3. 搜索 v2 版本卡组中和 v3 版本重复的卡片  
 ![04](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250903eq1TbU.png)
