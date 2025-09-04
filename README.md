@@ -255,15 +255,15 @@ v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更�
 
 ### **【AnkiDroid】卡组导入速度慢**
 
-- **已知问题**
+#### **已知问题**
 
-  在 Android 15 及以上系统中，导入包含大量媒体的卡片时，导入速度明显变慢。
+在 Android 15 及以上系统中，导入包含大量媒体的卡片时，导入速度明显变慢。
 
-- **解决方案**
-  
-  - 先在其他平台导入卡组，然后同步到 AnkiDroid。
-  
-  - 等待 Android 与 AnkiDroid 官方的后续修复。
+#### **解决方案**
+
+- 先在其他平台导入卡组，然后同步到 AnkiDroid。
+
+- 等待 Android 与 AnkiDroid 官方的后续修复。
 
 ------
 
@@ -467,28 +467,28 @@ autoCopy: {           // 背面自动复制: true 开启 | false 关闭
 
 <details>
 <summary>点击展开／折叠</summary>
+#### **在线 TTS 的开启与关闭**
 
-- **在线 TTS 的开启与关闭**
+参考以下代码，修改 `enable: ''` 内的参数。
 
-  - 参考以下代码，修改 `enable: ''` 内的参数。
+#### **自定义在线 TTS 服务**
 
-- **自定义在线 TTS 服务**
+- 默认内置两个在线 TTS 服务器，可在 `domain: []` 里自行增删。
 
-  - 默认内置两个在线 TTS 服务器，可在 `domain: []` 里自行增删。
+- 可参考 [ms-ra-forwarder-for-ifreetime](https://github.com/yy4382/ms-ra-forwarder-for-ifreetime) 搭建自己的 TTS 服务器（选择**无 token** 部署，建议自定义域名设置得复杂一些避免泄露）。
 
-  - 可参考 [ms-ra-forwarder-for-ifreetime](https://github.com/yy4382/ms-ra-forwarder-for-ifreetime) 搭建自己的 TTS 服务器（选择**无 token** 部署，建议自定义域名设置得复杂一些避免泄露）。
-  
-- **在桌面端和 AnkiWeb 启用播放快捷键**
-  - 在 `hotkey: ''` 中指定快捷键，留空则关闭。
-  
-  - 由于浏览器限制，无法自动连续播放，需要手动或再次触发快捷键。
-  
-- **其他设置**
-  
-  - 在 `voiceName: ‘’` 中可以设置 TTS 语音名称。
+#### **在桌面端和 AnkiWeb 启用播放快捷键**
 
-  - 在 `speed:` 中可以调节语速。
-  
+- 在 `hotkey: ''` 中指定快捷键，留空则关闭。
+
+- 由于浏览器限制，无法自动连续播放，需要手动或再次触发快捷键。
+
+#### **其他设置**
+
+- 在 `voiceName: ‘’` 中可以设置 TTS 语音名称。
+
+- 在 `speed:` 中可以调节语速。
+
 ```js
 tts: {
   enable: 'fallback', // 在线 TTS 开关: 'always' 始终开启 | 'fallback' 无本地音频时启用 | 'never' 始终关闭
@@ -517,9 +517,9 @@ tts: {
 <summary>点击展开／折叠</summary>
 
 
-- **使用系统自带字体**
-  
-  将您想添加的字体名称放在对应语言的 `font-family` 的首位。
+#### **使用系统自带字体**
+
+将您想添加的字体名称放在对应语言的 `font-family` 的首位。
 
 ```css
 /* --- 字体样式（不包括 VocabKanji 字段） --- */
@@ -543,13 +543,13 @@ tts: {
 
 ------
 
-- **使用从 Anki 媒体文件夹加载的自定义字体文件**
-  
-  >  参考教程：[简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/templates/styling.html?highlight=%E5%AD%97%E4%BD%93#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93) ｜ [English](https://docs.ankiweb.net/templates/styling.html#installing-fonts)
-  
-  1. 将字体文件放入 Anki 媒体文件夹，并以 `_` 开头命名。
-  
-  2. 修改对应语言的 `@font-face` 中的 `src` 路径为该文件名。
+#### **使用从 Anki 媒体文件夹加载的自定义字体文件**
+
+>  参考教程：[简体中文](https://open-spaced-repetition.github.io/anki-manual-zh-CN/templates/styling.html?highlight=%E5%AD%97%E4%BD%93#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93) ｜ [English](https://docs.ankiweb.net/templates/styling.html#installing-fonts)
+
+1. 将字体文件放入 Anki 媒体文件夹，并以 `_` 开头命名。
+
+2. 修改对应语言的 `@font-face` 中的 `src` 路径为该文件名。
 
 ```css
 @font-face {
@@ -571,24 +571,24 @@ tts: {
 
 ------
 
-- **在 iOS 端使用「[UDデジタル教科書体](https://www.morisawa.co.jp/topic/upg201802/)」**
-  
-  1. 下载并安装字体配置文件：[下载链接](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig)
-  
-  2. 取消注释以下代码的 `transform: 0;` 部分：
-     ```css
-     /* --- iOS 若安装教科书字体开启以下样式 --- */
-     .ios .VocabKanji rt,
-     .safari .VocabKanji rt {
-     /* transform: 0; */
-     }
-     ```
-  
+#### **在 iOS 端使用「[UDデジタル教科書体](https://www.morisawa.co.jp/topic/upg201802/)」**
+
+1. 下载并安装字体配置文件：[下载链接](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig)
+
+2. 取消注释以下代码的 `transform: 0;` 部分：
+   ```css
+   /* --- iOS 若安装教科书字体开启以下样式 --- */
+   .ios .VocabKanji rt,
+   .safari .VocabKanji rt {
+   /* transform: 0; */
+   }
+   ```
+
 ------
 
-- **在 iOS 端使用自定义字体时，Ruby（ふりがな）行与汉字行重叠**
-  
-  请注释掉以下代码中 `transform: translateY(0.6em);` 部分：
+#### **在 iOS 端使用自定义字体时，Ruby（ふりがな）行与汉字行重叠**
+
+请注释掉以下代码中 `transform: translateY(0.6em);` 部分：
 
 ```css
 /* --- iOS 思源宋体振假名高度修复 --- */
@@ -611,21 +611,21 @@ tts: {
 
 ------
 
-1. **开启**
+#### **开启**
 
-   - 打开卡片模板 → 选择「2：中-日……」→ 在正／背面模板中找到 `{{ #Alt2 }}` 改为 `{{ ^Alt2 }}` → 保存并重启 Anki。
+- 打开卡片模板 → 选择「2：中-日……」→ 在正／背面模板中找到 `{{ #Alt2 }}` 改为 `{{ ^Alt2 }}` → 保存并重启 Anki。
 
-   - 新增的「中-日」模板卡片会与现有卡片一同出现，可自行分组管理。  
+- 新增的「中-日」模板卡片会与现有卡片一同出现，可自行分组管理。  
 
 ![操作方法](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20241206vC6C4m.png)
 
 ------
 
-2. **关闭**
-   
-   将 `{{ ^Alt2 }}` 改回 `{{ #Alt2 }}` → 保存 → `工具` → `清理空卡片` → `删除` 对应卡片。  
-   
-   ![删除空白卡片](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20241206aUZkfD.png)
+#### **关闭**
+
+将 `{{ ^Alt2 }}` 改回 `{{ #Alt2 }}` → 保存 → `工具` → `清理空卡片` → `删除` 对应卡片。  
+
+![删除空白卡片](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20241206aUZkfD.png)
 
 </details>
 
@@ -637,7 +637,7 @@ tts: {
   
 - `uovkm` 的[《综合日语第三版》第一册～第四册单词卡组](https://ankiweb.net/shared/by-author/516873037)。
 
-- `菜鸡` 的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f) ，推荐一读。相关 QQ 讨论群：`830058869`。
+- 本卡组并不是日语学习的全部，建议多沉浸，从自己感兴趣的语料中挖掘生词。推荐读一下 `菜鸡` 撰写的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f) 。相关 QQ 讨论群：`830058869`。
 
 - `Z` 的语言学习论坛： [Campfirium](https://campfirium.info)。
 
