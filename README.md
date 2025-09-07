@@ -582,9 +582,11 @@ tts: {
 
 ------
 
-#### **在 iOS 端使用「[UDデジタル教科書体](https://www.morisawa.co.jp/topic/upg201802/)」**
+#### **在 iOS 端为 VocabKanji 字段启用教科书字体**
 
-1. 下载并安装字体配置文件：[下载链接](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig)
+1. 下载并安装教科书字体配置文件（根据喜好二选一即可）：[UDデジタル教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig) ｜ [游教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250907QFAAA3.mobileconfig)
+
+   也可以参考 [链接1](https://sub.pentacom.jp/custom-ios-fonts/) ｜ [链接2](https://github.com/TomJinW/FontGen_4iOS_Win) 制作其他字体的描述文件。
 
 2. 取消注释以下代码的 `transform: 0;` 部分：
    ```css
@@ -595,19 +597,20 @@ tts: {
    }
    ```
 
+3. 注释掉以下代码中 `transform: translateY(0.6em);` 部分：
+   ```css
+   /* --- iOS 思源宋体振假名高度修复 --- */
+   .ios rt,
+   .safari rt {
+     transform: translateY(0.6em);
+   }
+   ```
+
 ------
 
 #### **在 iOS 端使用自定义字体时，Ruby（ふりがな）行与汉字行重叠**
 
-请注释掉以下代码中 `transform: translateY(0.6em);` 部分：
-
-```css
-/* --- iOS 思源宋体振假名高度修复 --- */
-.ios rt,
-.safari rt {
-  transform: translateY(0.6em);
-}
-```
+请参考上一条中的「3. 注释掉以下代码中 `transform: translateY(0.6em);` 部分」。
 
 </details>
 
@@ -669,6 +672,8 @@ tts: {
 - 感谢 `YonezawaSama` 提供的在线 TTS 语音服务及 apkg 处理脚本。
 
 - 感谢 `Z` 提供的词源补充资料。
+
+- 感谢 `星のカービィ` 提供的字体描述文件。
 
 - 感谢各位用户的反馈，让卡组不断完善！
 
