@@ -584,7 +584,7 @@ tts: {
 
 #### **在 iOS 端为 VocabKanji 字段启用教科书字体**
 
-1. 下载并安装教科书字体配置文件（根据喜好二选一即可）：[UDデジタル教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig) ｜ [游教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250907QFAAA3.mobileconfig)
+1. 下载并安装教科书字体描述文件（根据喜好二选一即可）：[UDデジタル教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250311py61nT.mobileconfig) ｜ [游教科書体](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250907QFAAA3.mobileconfig)
 
    也可以参考 [链接1](https://sub.pentacom.jp/custom-ios-fonts/) ｜ [链接2](https://github.com/TomJinW/FontGen_4iOS_Win) 制作其他字体的描述文件。
 
