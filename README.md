@@ -657,7 +657,10 @@ tts: {
 
 ## 致谢
 
-- 感谢 `siriuxy`、`ShikChen`的打赏。
+- 感谢以下用户的捐赠：
+   ```
+   siriuxy, ShikChen, R4mble
+   ```
 
 - 感谢 `iPumpkin` 对卡组模板的重构、功能添加和维护。
 
