@@ -122,7 +122,7 @@
 
 - Windows／macOS／Linux：Anki
 
-  [AnkiWeb 官网](https://apps.ankiweb.net/) ｜ [GitHub](https://github.com/ankitects/anki/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankitects/anki/releases/latest)
+  [AnkiWeb 官网](https://apps.ankiweb.net/) ｜ [GitHub](https://github.com/ankitects/anki/releases/latest)
 
 - iOS／iPadOS：AnkiMobile Flashcards
 
@@ -132,7 +132,7 @@
 
 - Android：AnkiDroid
 
-  [Play Store](https://play.google.com/store/apps/details?id=com.ichi2.anki) ｜ [GitHub](https://github.com/ankidroid/Anki-Android/releases/latest) ｜ [GitHub（中国大陆加速）](https://gh-proxy.com/github.com/ankidroid/Anki-Android/releases/latest)
+  [Play Store](https://play.google.com/store/apps/details?id=com.ichi2.anki) ｜ [GitHub](https://github.com/ankidroid/Anki-Android/releases/latest)
 
   > ⚠️ 请勿使用由「Anki 中国」提供的 AnkiDroid（v2.16.0beta2），存在兼容性问题！
 
@@ -140,10 +140,7 @@
 
 ### **下载并导入**
 
-- 请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可通过以下链接直接下载：
-
-  [下载地址 1](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) ｜ [下载地址 2（中国大陆加速）](https://gh-proxy.com/github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)
-
+- 请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可 [点此直接下载最新版卡组](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) 。
 
 - 打开 Anki，导入已下载的 `.apkg` 文件。
   
