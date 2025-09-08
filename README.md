@@ -176,6 +176,7 @@
 
 <details>
 <summary>点击展开／折叠</summary><br>
+
 为避免频繁更新干扰学习，如无重大 Bug，本卡组稳定版（Latest）一般每 **1 至 2 个月**发布一次。
 
 更新方法：下载最新的 `.apkg` 文件导入 Anki，**不影响学习进度**。
@@ -212,6 +213,8 @@ v3 版本进行了大量修改，故与 v2 版本相互独立，无法覆盖更�
 
 <details>
 <summary>点击展开／折叠</summary><br>
+
+0. 下载并导入 v3 新版卡组
 
 1. 安装 [Transfer Scheduling Info Advanced](https://ankiweb.net/shared/info/1249258442) 插件（代码 `1249258442` ）
 
