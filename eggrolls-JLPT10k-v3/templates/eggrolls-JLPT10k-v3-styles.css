@@ -478,6 +478,34 @@ a.Feedback {
   padding: 0;
 }
 
+#quiz .DialogOverlay {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+#quiz .DialogContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--modal-padding-top);
+  max-height: calc(100% - var(--modal-padding-top));
+  overflow: hidden;
+}
+
+#quiz .DialogBody {
+  overflow: auto;
+  min-height: 0;
+}
+
+#quiz .DialogFooter {
+  position: sticky;
+  bottom: 0;
+  background: var(--canvas-inset);
+}
+
 /* --- iOS 思源宋体振假名高度修复 --- */
 .ios rt,
 .safari rt {
@@ -515,6 +543,7 @@ a.Feedback {
 /* --- 弹出模态框样式 --- */
 .DialogOverlay {
   /* display: none; */
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -525,6 +554,7 @@ a.Feedback {
   padding-top: var(--modal-padding-top);
   background-color: rgb(0 0 0 / 0.5);
   backdrop-filter: blur(1px);
+
 }
 
 .DialogTitle {
@@ -551,6 +581,15 @@ a.Feedback {
   background-color: var(--canvas-inset);
   padding: 22px 16px;
   font-size: var(--text-sm);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--modal-padding-top));
+  overflow: hidden;
+}
+
+@supports (height: 100dvh) {
+  .DialogOverlay  { height: 100dvh; }
+  .DialogContent  { max-height: calc(100dvh - var(--modal-padding-top)); }
 }
 
 .DialogBody {
@@ -560,6 +599,8 @@ a.Feedback {
   flex-direction: column;
   row-gap: 6px;
   padding: 10px 0 20px;
+  overflow: auto;
+  min-height: 0; 
 }
 
 .DialogBody ul {

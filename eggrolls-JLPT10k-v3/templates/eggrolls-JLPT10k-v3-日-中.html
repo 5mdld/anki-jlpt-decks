@@ -187,11 +187,15 @@
 
       const data = await response.json()
       latest = `v${data.tag_name?.split('_')[0].replace(/^v/, '')}`
-      info = data.body?.replace(/`(.*?)`/g, (match, p1) => `<code>${p1}</code>`)
+      info = data.body
+        ?.replace(/`([^`]+)`/g, (m, p1) => `<code>${p1}</code>`)
         .replace(/\r?\n/g, '<br>')
-        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
-        .replace(/(\s+)-(?!(?:[^<]*>|[^<>]*<\/code>))/g, '$1◦')
-        .replace(/-(?!(?:[^<]*>|[^<>]*<\/code>))/g, '▪')
+        .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+        .replace(/(!)?\[([^\]]+)\]\(((?:https?:\/\/[^\s()]+|\([^()]*\))+)\)/g, (m, bang, text, url) =>
+          bang ? m : `<a target="_blank" rel="noopener noreferrer" href="${url}">${text}</a>`
+        )
+        .replace(/(^|<br>)[ \t]*-[ \t]+/g, '$1◦ ')
+      info = info.replace(/(^|<br>)[ \t]*#{3}[ \t]*(.+?)(?=(?:<br>|$))/g, '$1<b>$2</b>')
     } catch (err) {
       console.error(err)
     }
