@@ -81,7 +81,7 @@ body,
 }
 
 .VocabKanji :lang(ja) {
-  font-family: 'YuKyokasho Yoko', 'UD Digi Kyokasho NK-R', 'Source Han Serif JP', serif;
+  font-family: 'YuKyokasho Yoko', 'UD Digi Kyokasho NK', 'UD Digi Kyokasho NK-R', 'Source Han Serif JP', serif;
 }
 
 :root {
