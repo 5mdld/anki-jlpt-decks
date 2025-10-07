@@ -664,7 +664,7 @@ tts: {
 
 - 感谢以下用户的捐赠：
    ```
-   siriuxy, ShikChen, R4mble
+   siriuxy, ShikChen, R4mble, ddmanlin
    ```
 
 - 感谢 `iPumpkin` 对卡组模板的重构、功能添加和维护。
