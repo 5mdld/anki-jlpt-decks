@@ -1,20 +1,19 @@
 # 【简体・繁體中文】【egg rolls】JLPT N1～N5 一万词（含语音、例句）v3
 
-## 前言
+<div align="center">
 
-- ### **本卡组在 GitHub 和 AnkiWeb 上永久免费更新。闲鱼等平台的付费版本均为盗卖，请勿购买！**
+[![AnkiWeb](https://img.shields.io/badge/AnkiWeb-Deck-2e6ce6?labelColor=0b3d91&style=flat&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
+[![GitHub - Repo](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/5mdld/anki-jlpt-decks)
+[![Telegram - Joint](https://img.shields.io/badge/Telegram-Join-2CA5E0?logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
+[![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld)
 
-- ### v3 版本（25.09.03 及以后）与 v2 版本（25.07.27 及以前）相互独立，无法覆盖更新，请参考 [说明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BB%8E-v2-%E7%89%88%E6%9C%AC250727-%E5%8F%8A%E4%BB%A5%E5%89%8D%E5%8D%87%E7%BA%A7%E5%88%B0-v3-%E7%89%88%E6%9C%AC250903-%E5%8F%8A%E4%BB%A5%E5%90%8E) 进行复习记录迁移。
-
-- 如果您觉得本卡组对您的日语学习有所帮助，请在 [AnkiWeb](https://ankiweb.net/shared/info/832276382) **点赞**，或为本仓库点个 **Star**。
-
-  您也可以点此按钮 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld) 进行**捐赠**。您的支持是我持续更新的最大动力！
-
-- 欢迎加入 Telegram Anki 日语交流群：[点此链接加入](https://t.me/+N7bNc8-BpqJjZmQ1)。
-
-------
+</div>
 
 ## 项目介绍
+
+- ### **本卡组在 GitHub 和 AnkiWeb 上永久免费提供。闲鱼等平台的付费版本均为盗卖，请勿购买！**
+
+- ### v3 版本（25.09.03 及以后）与 v2 版本（25.07.27 及以前）相互独立，无法覆盖更新，请参考 [说明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BB%8E-v2-%E7%89%88%E6%9C%AC250727-%E5%8F%8A%E4%BB%A5%E5%89%8D%E5%8D%87%E7%BA%A7%E5%88%B0-v3-%E7%89%88%E6%9C%AC250903-%E5%8F%8A%E4%BB%A5%E5%90%8E) 进行复习记录迁移。
 
 - 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级，共计约 **10,000 个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
 
