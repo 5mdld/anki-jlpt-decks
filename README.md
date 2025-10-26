@@ -15,9 +15,11 @@
 
 - ### v3 版本（25.09.03 及以后）与 v2 版本（25.07.27 及以前）相互独立，无法覆盖更新，请参考 [说明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BB%8E-v2-%E7%89%88%E6%9C%AC250727-%E5%8F%8A%E4%BB%A5%E5%89%8D%E5%8D%87%E7%BA%A7%E5%88%B0-v3-%E7%89%88%E6%9C%AC250903-%E5%8F%8A%E4%BB%A5%E5%90%8E) 进行复习记录迁移。
 
-- 本项目是基于 [Anki](https://apps.ankiweb.net/) 制作的日语单词卡组，覆盖 JLPT N1 至 N5 全等级，共计约 **10,000 个词条**。每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
+- 本卡组涵盖 JLPT N1 至 N5 全级别，收录约 **10,000 个词条**，需配合 [Anki](https://apps.ankiweb.net/) 使用。
 
-- 支援繁體中文，詳細設定方法請參考 [說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
+  每个词条均提供释义、例句以及对应的单词和例句音频，帮助学习者更高效地记忆和理解。
+
+- 卡組支援繁體中文，設定方法請參考 [說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
 
 - 我的其他 Anki 卡组和插件：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)。
 
