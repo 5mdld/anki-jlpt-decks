@@ -2,16 +2,16 @@
 
 <div align="center">
 
-[![AnkiWeb](https://img.shields.io/badge/AnkiWeb-Deck-2e6ce6?labelColor=0b3d91&style=flat&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
+[![AnkiWeb - Deck](https://img.shields.io/badge/AnkiWeb-Deck-2e6ce6?labelColor=0b3d91&style=flat&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![GitHub - Repo](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/5mdld/anki-jlpt-decks)
-[![Telegram - Joint](https://img.shields.io/badge/Telegram-Join-2CA5E0?logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
+[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld)
 
 </div>
 
 ## 项目介绍
 
-- ### **本卡组在 GitHub 和 AnkiWeb 上永久免费提供。闲鱼等平台的付费版本均为盗卖，请勿购买！**
+- ### 本卡组在 GitHub 和 AnkiWeb 上永久免费提供。闲鱼等平台的付费版本均为盗卖，请勿购买！
 
 - ### v3 版本（25.09.03 及以后）与 v2 版本（25.07.27 及以前）相互独立，无法覆盖更新，请参考 [说明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BB%8E-v2-%E7%89%88%E6%9C%AC250727-%E5%8F%8A%E4%BB%A5%E5%89%8D%E5%8D%87%E7%BA%A7%E5%88%B0-v3-%E7%89%88%E6%9C%AC250903-%E5%8F%8A%E4%BB%A5%E5%90%8E) 进行复习记录迁移。
 
@@ -19,7 +19,7 @@
 
 - 支援繁體中文，詳細設定方法請參考 [說明](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#使用繁體中文)。
 
-- 我的其他 Anki 卡组和插件可访问：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)。
+- 我的其他 Anki 卡组和插件：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)。
 
 ------
 
@@ -315,9 +315,9 @@ Anki 桌面端 25.02.1 版本的安全更新意外破坏了卡组的词典跳转
 
 ------
 
-### **一些が行浊音听起来很奇怪（比如「だいがく」中的「が」听起来像「な」）**
+### **一些发音听起来好像不对（比如「だいがく」中的「が」听起来像「な」；「ふくそう」听起来像「くそう」）**
 
-这不是错误，请参考：[鼻浊音](https://zh.wikipedia.org/wiki/%E9%BC%BB%E6%BF%81%E9%9F%B3)。
+这不是错误，请参考：[鼻濁音](https://zh.wikipedia.org/wiki/%E9%BC%BB%E6%BF%81%E9%9F%B3) 和 [母音の無声化](https://spot-pj.com/glossary/no28-vowel-devoicing/)。
 
 ------
 
