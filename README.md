@@ -2,10 +2,9 @@
 
 <div align="center">
 
-[![AnkiWeb - Deck](https://img.shields.io/badge/AnkiWeb-Deck-2e6ce6?labelColor=0b3d91&style=flat&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
-[![GitHub - Repo](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/5mdld/anki-jlpt-decks)
-[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
-[![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?logo=githubsponsors)](https://github.com/sponsors/5mdld)
+[![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
+[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
+[![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/5mdld)
 
 </div>
 
@@ -41,7 +40,7 @@
 - **概要**：基于 2010 年改制后～2024 年 12 月的 JLPT 真题文本，提取并分级了约 10,000 个单词。
   
 - **排序：** 参考 `Order` 字段。
-  - N4 及 N5 单词按照主观判断从易到难进行排序。
+  - N4 及 N5 单词按照作者主观判断从易到难进行排序。
   
   - N3 及以上单词按照 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 的词频升序排序。
   
@@ -53,7 +52,7 @@
   
   - **低频**：在 JLPT 真题中出现过 1 次的单词。
 
-> 以上排序和分类仅供参考，如有问题请反馈。
+> 以上排序和分类仅供参考，如与真题不符，请反馈。
 
 ------
 
@@ -141,7 +140,7 @@
 
 ### **下载并导入**
 
-- 请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可 [点此直接下载最新版卡组](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg) 。
+- 请前往 [Releases 页面](https://github.com/5mdld/anki-jlpt-decks/releases) 下载最新稳定版（Latest）的 `.apkg` 文件（**注意：不要下载 `zip` 文件**）。也可 [点此直接下载最新版卡组](https://github.com/5mdld/anki-jlpt-decks/releases/latest/download/eggrolls-JLPT10k-v3.apkg)。
 
 - 打开 Anki，导入已下载的 `.apkg` 文件。
   
@@ -157,7 +156,7 @@
 
 > 🎬 牌组选项位置视频教程：[Android](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314Wwzrtj.mp4) ｜ [iOS](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/202503144dcecY.mp4) ｜ [macOS／Windows](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314s2AMCN.mp4)
 
-请点击牌组旁的 ⚙️ 图标打开牌组选项界面，并参考以下图片进行设置：
+请点击牌组旁的 ⚙️ 图标打开牌组选项界面，并参考以下图片进行设置（不同版本的 Anki 可能会略有差异）：
 
 ![deck options](https://pub-90b0b2afa26447b8b824c3d05d8e274f.r2.dev/uPic/20250314HpoTxy.png)
 
