@@ -1,4 +1,4 @@
-# 【简体・繁體中文】【egg rolls】JLPT N1～N5 一万词（含语音、例句）v3
+# 【egg rolls】JLPT N1～N5 一万词 v3【简／繁】【语音＆例句】
 
 <div align="center">
 
