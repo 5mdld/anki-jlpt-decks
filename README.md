@@ -667,7 +667,7 @@ tts: {
    siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ
    ```
 
-- 感谢 `iPumpkin` 对卡组模板的重构、功能添加和维护。
+- 感谢 @iPumpkin 对卡组模板的重构、功能添加和维护。
 
 - 感謝 `ShihHsing Chen` 提供的繁體中文資料。
 
