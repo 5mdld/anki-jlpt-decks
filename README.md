@@ -646,7 +646,7 @@ tts: {
 
 ## 友情链接
 
-- `MasterOfMasterSword` 的一些文法和单词卡组，请前往 [AnkiWeb](https://ankiweb.net/shared/by-author/1681155450) 查看详情。
+- `MasterOfMasterSword` 的许多文法和单词卡组，包括蓝宝书语法卡组等，请前往 [AnkiWeb](https://ankiweb.net/shared/by-author/1681155450) 查看详情。
   
 - `uovkm` 的[《综合日语第三版》第一册～第四册单词卡组](https://ankiweb.net/shared/by-author/516873037)。
 
@@ -654,9 +654,13 @@ tts: {
 
 - `Z` 的语言学习论坛： [Campfirium](https://campfirium.info)。
 
-- `nclark` 的 JLPT 真题备考网站：[JLPT Platform](https://jlpt.nnde.de)。
+- （2026.01 已失效） ~~`nclark` 的 JLPT 真题备考网站：[JLPT Platform](https://jlpt.nnde.de)。~~
 
-- `raynor` 的《毎日一問日本語》TG 频道，每天早上会发布一道 JLPT 真题：[N1](https://t.me/daily_jlptn1) ｜[N2](https://t.me/daily_jlptn2) ｜[N3](https://t.me/daily_jlptn3)。
+- `raynor` 的《毎日一問日本語》Telegram 频道，每天早上会发布一道 JLPT 真题：[N1](https://t.me/daily_jlptn1) ｜[N2](https://t.me/daily_jlptn2) ｜[N3](https://t.me/daily_jlptn3)。
+
+- `chidaoshu` 的 [《おにぎり文法》卡组](https://ankiweb.net/shared/info/1567144169)。
+
+- 叶哥（Jarrett Ye，FSRS开发者）的 [知乎文章备份](https://l-m-sherlock.github.io/ZhiHuArchive/)。
 
 ------
 
