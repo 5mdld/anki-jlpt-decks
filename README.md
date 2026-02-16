@@ -654,8 +654,6 @@ tts: {
 
 - `Z` 的语言学习论坛： [Campfirium](https://campfirium.info)。
 
-- （2026.01 已失效） ~~`nclark` 的 JLPT 真题备考网站：[JLPT Platform](https://jlpt.nnde.de)。~~
-
 - `raynor` 的《毎日一問日本語》Telegram 频道，每天早上会发布一道 JLPT 真题：[N1](https://t.me/daily_jlptn1) ｜[N2](https://t.me/daily_jlptn2) ｜[N3](https://t.me/daily_jlptn3)。
 
 - `chidaoshu` 的 [《おにぎり文法》卡组](https://ankiweb.net/shared/info/1567144169)。
