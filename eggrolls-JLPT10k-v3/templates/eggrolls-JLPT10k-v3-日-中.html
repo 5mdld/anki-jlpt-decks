@@ -81,7 +81,7 @@
         domain: [
           // 可以添加更多域名，按顺序依次尝试播放
           'https://anki.0w0.live/',
-          'https://ms-ra-forwarder-for-ifreetime-pbbu.vercel.app/',
+          'https://ms-ra-forwarder-for-ifreetime-five-steel.vercel.app/',
         ],
         params: {
           voiceName: 'ja-JP-KeitaNeural,ja-JP-NanamiNeural', // 语音为多个时随机选择一个
@@ -473,6 +473,9 @@
     const wordRegex = /[一-龠々ヵヶ]+|[ぁ-んァ-ヴー]+/g
     const kanjiRegex = /[一-龠々ヵヶ]/
     const parts = cleanWord().match(wordRegex) ?? []
+
+    if (parts.length === 0) return
+
     const regexParts = parts.map(part => {
       return kanjiRegex.test(part)
         ? `(?:<ruby><rb>${part}</rb><rt>[^<]+</rt></ruby>|${part})`
