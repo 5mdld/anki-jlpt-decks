@@ -1,7 +1,6 @@
 # 【egg rolls】JLPT N1～N5 一万词 v3【简／繁】【语音＆例句】
 
 <div align="center">
-
 [![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![MARKJI - Deck](https://img.shields.io/badge/MARKJI-Deck-F89632?labelColor=7FC0AD&style=for-the-badge)](https://www.markji.com/deck/699faa1d51fa678290828e51)
 [![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
@@ -17,7 +16,7 @@
 
 - 本牌组在 GitHub（此处）及 [AnkiWeb](https://ankiweb.net/shared/info/832276382) 上免费提供，并同步发布于 [墨墨记忆卡（Markji）](https://www.markji.com/deck/699faa1d51fa678290828e51)。
 
-  - [墨墨记忆卡](https://www.markji.com/app) 是一款类似 Anki 的间隔重复记忆卡软件，采用了 FSRS 作者叶峻峣开发的 MMX 算法。相比 Anki，它更偏开箱即用，上手成本更低。
+  - [墨墨记忆卡](https://www.markji.com/app) 是一款类似 Anki 的间隔重复记忆卡软件，采用了 FSRS 作者叶峻峣开发的 MMX 算法。相比 Anki，它更开箱即用，界面更友好，上手难度更低，欢迎体验： [牌组链接](https://www.markji.com/deck/699faa1d51fa678290828e51)。
 
     在该平台学习会消耗记忆币（可通过签到等方式获取部分免费额度，也可付费购买）。如你使用付费记忆币学习本牌组，我将按平台规则获得对应收入的 50% 分成；会员等其他付费服务与本牌组无关。
 
