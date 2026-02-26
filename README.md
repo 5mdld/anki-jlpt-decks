@@ -1,6 +1,7 @@
 # 【egg rolls】JLPT N1～N5 一万词 v3【简／繁】【语音＆例句】
 
 <div align="center">
+
 [![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![MARKJI - Deck](https://img.shields.io/badge/MARKJI-Deck-F89632?labelColor=7FC0AD&style=for-the-badge)](https://www.markji.com/deck/699faa1d51fa678290828e51)
 [![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
