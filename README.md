@@ -104,10 +104,11 @@
 | [例]      | 例句                                                                     |
 | [関]      | 同义词／关联词                                                                |
 | [対]      | 反义词                                                                    |
-| 🔍        | 跳转外部词典或网页查词，可 [自定义](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BF%AE%E6%94%B9%E8%B7%B3%E8%BD%AC%E7%9A%84%E9%93%BE%E6%8E%A5) |
+| 🔍        | 跳转外部词典或网页查词，可 [自定义](https://github.com/5mdld/anki-jlpt-decks?tab=readme-ov-file#%E4%BF%AE%E6%94%B9%E8%B7%B3%E8%BD%AC%E7%9A%84%E9%93%BE%E6%8E%A5)<br />如未正确配置，将跳转至 README 的相关部分 |
 | v25.01.01 | 卡片版本号（最后一次更新日期）                                                       |
-| 反馈        | 若本地牌组为最新版本，点击后跳转至 GitHub Issues 反馈页面；<br />若本地牌组非最新版本，则跳转至最新版本的下载页面    |
-| 🎉        | 检测到可更新的新版本牌组                                                           |
+| 反馈        | 点击跳转至 GitHub Issues 反馈页面    |
+| 更新      | 本地牌组非最新版本，点击跳转至最新版本的下载页面                                  |
+| 🎉 | 检测到可更新的新版本牌组 |
 
 </details>
 
@@ -447,7 +448,7 @@ playback: 'force',    // 背面播放设置: 'default' 为使用系统设置；'
 参考以下代码，修改 `display: ''` 内的参数。
 
 ```js
-display: 'default',   // 正面单词显示: 'default' 显示汉字和注音假名；'kana' 为只显示假名；'kanji' 为只显示汉字
+display: 'default',   // 正面单词显示: 'default' 显示汉字和注音假名（如有）；'kana' 为只显示假名；'kanji' 为只显示汉字
 ```
 
 ------
