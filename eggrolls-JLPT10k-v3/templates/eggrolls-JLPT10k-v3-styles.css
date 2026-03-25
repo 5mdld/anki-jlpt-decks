@@ -117,8 +117,6 @@ body,
   --label-indent2-padding: calc(11 / 18 * 1em);
   --label-indent2-text: calc(-13 / 18 * 1em);
   --audio-button-size: calc(32 / 18 * 1em);
-  --modal-padding-top: 12vh;
-  --modal-max-width: 80%;
 }
 
 :root.night-mode,
@@ -159,8 +157,6 @@ body,
     --label-indent-text: calc(-66 / 22 * 1em);
     --label-indent2-padding: calc(14 / 22 * 1em);
     --label-indent2-text: calc(-16 / 22 * 1em);
-    --modal-padding-top: 15vh;
-    --modal-max-width: 28em;
   }
 }
 
@@ -195,8 +191,7 @@ body,
 .card .Top,
 .card .Search,
 .card .Feedback,
-.card .VocabPitch,
-.card .DialogContent {
+.card .VocabPitch {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
@@ -478,34 +473,6 @@ a.Feedback {
   padding: 0;
 }
 
-#quiz .DialogOverlay {
-  display: flex;
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  padding-top: 0;
-  overflow: hidden;
-}
-
-#quiz .DialogContent {
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--modal-padding-top);
-  max-height: calc(100% - var(--modal-padding-top));
-  overflow: hidden;
-}
-
-#quiz .DialogBody {
-  overflow: auto;
-  min-height: 0;
-}
-
-#quiz .DialogFooter {
-  position: sticky;
-  bottom: 0;
-  background: var(--canvas-inset);
-}
-
 /* --- iOS 思源宋体振假名高度修复 --- */
 .ios rt,
 .safari rt {
@@ -538,126 +505,4 @@ a.Feedback {
 .android .SentenceList {
   border-bottom-width: 0;
   min-height: 0;
-}
-
-/* --- 弹出模态框样式 --- */
-.DialogOverlay {
-  /* display: none; */
-  display: flex;
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  height: 100vh;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: hidden;
-  padding-top: var(--modal-padding-top);
-  background-color: rgb(0 0 0 / 0.5);
-  backdrop-filter: blur(1px);
-
-}
-
-.DialogTitle {
-  text-align: center;
-  font-size: var(--text-xl);
-  letter-spacing: 2px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 12px;
-}
-
-.DialogTitle span {
-  display: block;
-  font-size: var(--text-sm);
-  letter-spacing: 0;
-  padding-top: 2px;
-}
-
-.DialogContent {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--modal-max-width);
-  width: 100%;
-  border-radius: var(--border-radius);
-  background-color: var(--canvas-inset);
-  padding: 22px 16px;
-  font-size: var(--text-sm);
-  display: flex;
-  flex-direction: column;
-  max-height: calc(100vh - var(--modal-padding-top));
-  overflow: hidden;
-}
-
-@supports (height: 100dvh) {
-  .DialogOverlay  { height: 100dvh; }
-  .DialogContent  { max-height: calc(100dvh - var(--modal-padding-top)); }
-}
-
-.DialogBody {
-  margin: 0 auto;
-  max-width: 26em;
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
-  padding: 10px 0 20px;
-  overflow: auto;
-  min-height: 0; 
-}
-
-.DialogBody ul {
-  font-size: var(--text-xs);
-  padding-left: 1.2em;
-  white-space: pre-wrap;
-}
-
-.DialogBody ul code {
-  background-color: var(--button-bg);
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
-  color: var(--fg);
-  vertical-align: text-bottom;
-  padding: .2em .4em;
-  font-size: 85%;
-  white-space: break-spaces;
-}
-
-.DialogBody ul b {
-  font-weight: 600;
-}
-
-.DialogFooter {
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 20px;
-}
-
-.DialogButton {
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--border-radius);
-  background-color: var(--button-bg);
-  padding: 6px 0;
-  text-align: center;
-  color: var(--fg);
-  letter-spacing: 2px;
-}
-
-.DialogButton:hover {
-  background-color: var(--button-gradient-start);
-}
-
-.DialogButton.CancelButton {
-  color: var(--fg);
-  background-color: var(--button-bg);
-}
-
-.DialogButton.ConfirmButton {
-  color: #fff;
-  background-color: var(--button-primary-bg);
-}
-
-.DialogButton.ConfirmButton:hover {
-  background-color: var(--button-primary-gradient-start);
 }

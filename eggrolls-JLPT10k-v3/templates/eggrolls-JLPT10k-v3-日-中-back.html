@@ -1,0 +1,99 @@
+<!-- Card1 [日-中] 背面 -->
+
+{{^Alt1}}
+
+{{FrontSide}}
+
+<div class="VocabAudio !hidden">{{VocabAudio}}</div>
+
+<main id="BackSide" class="CardSide">
+  <section class="Answer">
+    <h2 class="VocabFurigana">
+      <span lang="ja">{{kana:VocabFurigana}}</span>
+      <span class="VocabPitch">{{VocabPitch}}</span>
+    </h2>
+
+    <h3 class="VocabPoS LabelIndent2">
+      <span class="VocabDef">{{VocabDefSC}}</span>
+    </h3>
+
+    {{#VocabPlus}}
+    <h3 class="VocabPlus LabelIndent" lang="ja">
+      {{furigana:VocabPlus}}
+    </h3>
+    {{/VocabPlus}}
+  </section>
+
+  <ul class="SentenceList">
+    {{#SentKanji1}}
+    <li class="Sentence">
+      <div class="SentGroup">
+        <h3 class="SentFurigana LabelIndent" lang="ja">
+          {{#SentFurigana1}}{{furigana:SentFurigana1}}{{/SentFurigana1}}
+          {{^SentFurigana1}}{{furigana:SentKanji1}}{{/SentFurigana1}}
+        </h3>
+        <h3 class="SentDef LabelIndent">{{SentDefSC1}}</h3>
+      </div>
+      <div class="SentAudio">{{SentAudio1}}</div>
+    </li>
+    {{/SentKanji1}}
+
+    {{#SentKanji2}}
+    <li class="Sentence">
+      <div class="SentGroup">
+        <h3 class="SentFurigana LabelIndent" lang="ja">
+          {{#SentFurigana2}}{{furigana:SentFurigana2}}{{/SentFurigana2}}
+          {{^SentFurigana2}}{{furigana:SentKanji2}}{{/SentFurigana2}}
+        </h3>
+        <h3 class="SentDef LabelIndent">{{SentDefSC2}}</h3>
+      </div>
+      <div class="SentAudio">{{SentAudio2}}</div>
+    </li>
+    {{/SentKanji2}}
+
+    {{#SentKanji3}}
+    <li class="Sentence">
+      <div class="SentGroup">
+        <h3 class="SentFurigana LabelIndent" lang="ja">
+          {{#SentFurigana3}}{{furigana:SentFurigana3}}{{/SentFurigana3}}
+          {{^SentFurigana3}}{{furigana:SentKanji3}}{{/SentFurigana3}}
+        </h3>
+        <h3 class="SentDef LabelIndent">{{SentDefSC3}}</h3>
+      </div>
+      <div class="SentAudio">{{SentAudio3}}</div>
+    </li>
+    {{/SentKanji3}}
+
+    {{#SentKanji4}}
+    <li class="Sentence">
+      <div class="SentGroup">
+        <h3 class="SentFurigana LabelIndent" lang="ja">
+          {{#SentFurigana4}}{{furigana:SentFurigana4}}{{/SentFurigana4}}
+          {{^SentFurigana4}}{{furigana:SentKanji4}}{{/SentFurigana4}}
+        </h3>
+        <h3 class="SentDef LabelIndent">{{SentDefSC4}}</h3>
+      </div>
+      <div class="SentAudio">{{SentAudio4}}</div>
+    </li>
+    {{/SentKanji4}}
+
+  </ul>
+</main>
+
+<script>
+  showHint()
+  setEdgeTTS()
+  autoCopyWord()
+  highlightWords()
+  audioStylePatch()
+  hideFrontElements()
+  typeof onShownHook !== 'undefined' ? onShownHook.push(forcePlayback) : forcePlayback()
+
+  // 安卓平台需要重复正面调用的方法
+  if (isAndroid()) {
+    setupCard()
+    hideFurigana()
+  }
+</script>
+
+{{/Alt1}}
