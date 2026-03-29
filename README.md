@@ -431,6 +431,12 @@ playback: 'force',    // 背面播放设置: 'default' 为使用系统设置；'
 
 ------
 
+### 补充正面音调显示
+
+请在正面模板中搜索 `<span class="VocabPitch"></span>`，并替换为 `<span class="VocabPitch">{{VocabPitch}}</span>`。
+
+------
+
 ### 隐藏指定字段
 
 如果想在正面隐藏某个指定字段，可以在该字段 `{{ ... }}` 前加上 `hint:`。例如，若要隐藏正面的 `SentFurigana` 字段：
