@@ -680,7 +680,7 @@ tts: {
 
 - 感谢以下用户的捐赠（匿名捐赠者的名称已作处理）：
    ```
-   siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ
+   siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ, xiaoduhappy2022
    ```
 
 - 感谢 `iPumpkin` 对牌组模板的重构、功能添加和维护。
