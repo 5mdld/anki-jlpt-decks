@@ -2,6 +2,7 @@
 
 <div align="center">
 
+
 [![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![MARKJI - Deck](https://img.shields.io/badge/MARKJI-Deck-F89632?labelColor=7FC0AD&style=for-the-badge)](https://www.markji.com/deck/699faa1d51fa678290828e51)
 [![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
@@ -54,7 +55,7 @@
 
 4. 首次导入时，建议打开「导入所有牌组预设配置」，以应用牌组自带预设。
 
-5. 如有需要，请注册并登录 AnkiWeb 账号，以同步多设备学习进度。
+5. 如有需要，请注册并登录 AnkiWeb 账号，以备份并同步多设备学习进度。
 
 ### 使用墨墨记忆卡（Markji）
 
