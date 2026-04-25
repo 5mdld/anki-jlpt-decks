@@ -1,0 +1,222 @@
+name: Draft release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "eggrolls-JLPT10k-v3/**"
+  workflow_dispatch:
+    inputs:
+      new_tag:
+        description: "Release tag to draft. Leave empty to read it from notes.csv."
+        required: false
+        type: string
+      previous_tag:
+        description: "Previous release tag to compare. Leave empty to use the latest published release."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: draft-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  draft-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Guard changed paths
+        id: guard
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event_name }}" != "push" ]]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          before="${{ github.event.before }}"
+          after="${{ github.sha }}"
+          changed_file="$RUNNER_TEMP/changed-files.txt"
+
+          if git cat-file -e "${before}^{commit}" 2>/dev/null; then
+            git diff --name-only "$before" "$after" > "$changed_file"
+          else
+            git diff-tree --no-commit-id --name-only -r "$after" > "$changed_file"
+          fi
+
+          echo "Changed files:"
+          cat "$changed_file"
+
+          if grep -Ev '^(eggrolls-JLPT10k-v3/)' "$changed_file" >/dev/null; then
+            echo "Push contains files outside eggrolls-JLPT10k-v3; skip draft release."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "should_run=true" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve release tags
+        id: tags
+        if: steps.guard.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEW_TAG_INPUT: ${{ inputs.new_tag }}
+          PREVIOUS_TAG_INPUT: ${{ inputs.previous_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git fetch --tags --force
+
+          base_tag="$NEW_TAG_INPUT"
+          if [[ -z "$base_tag" ]]; then
+            base_tag="$(python3 scripts/diff_notes.py version eggrolls-JLPT10k-v3/notes.csv)"
+          fi
+
+          previous_tag="$PREVIOUS_TAG_INPUT"
+          if [[ -z "$previous_tag" ]]; then
+            previous_tag="$(
+              gh api "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+                --jq '[.[] | select(.draft == false)][0].tag_name'
+            )"
+          fi
+
+          if [[ -z "$previous_tag" || "$previous_tag" == "null" ]]; then
+            echo "Could not resolve previous published release tag." >&2
+            exit 1
+          fi
+
+          draft_tag="$(
+            gh api "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+              --jq '.[] | select(.draft == true) | .tag_name' \
+              | awk -v base="$base_tag" '$0 == base || index($0, base "_") == 1 { print; exit }'
+          )"
+
+          if [[ -n "$draft_tag" ]]; then
+            new_tag="$draft_tag"
+          else
+            new_tag="$base_tag"
+            if git rev-parse -q --verify "refs/tags/$new_tag" >/dev/null; then
+              suffix=2
+              while git rev-parse -q --verify "refs/tags/${base_tag}_${suffix}" >/dev/null; do
+                suffix=$((suffix + 1))
+              done
+              new_tag="${base_tag}_${suffix}"
+            fi
+          fi
+
+          echo "base_tag=$base_tag" >> "$GITHUB_OUTPUT"
+          echo "new_tag=$new_tag" >> "$GITHUB_OUTPUT"
+          echo "previous_tag=$previous_tag" >> "$GITHUB_OUTPUT"
+          echo "draft_exists=$([[ -n "$draft_tag" ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+          echo "Base tag: $base_tag"
+          echo "Draft tag: ${draft_tag:-<none>}"
+          echo "New tag: $new_tag"
+          echo "Previous tag: $previous_tag"
+
+      - name: Generate diff report
+        if: steps.guard.outputs.should_run == 'true'
+        env:
+          NEW_TAG: ${{ steps.tags.outputs.new_tag }}
+          PREVIOUS_TAG: ${{ steps.tags.outputs.previous_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git cat-file -e "${PREVIOUS_TAG}:eggrolls-JLPT10k-v3/notes.csv" 2>/dev/null; then
+            git show "${PREVIOUS_TAG}:eggrolls-JLPT10k-v3/notes.csv" > "$RUNNER_TEMP/old-notes.csv"
+          elif git cat-file -e "${PREVIOUS_TAG}:NEW-JLPT/notes.csv" 2>/dev/null; then
+            git show "${PREVIOUS_TAG}:NEW-JLPT/notes.csv" > "$RUNNER_TEMP/old-notes.csv"
+          else
+            echo "Could not find notes.csv in previous tag ${PREVIOUS_TAG}." >&2
+            exit 1
+          fi
+
+          report_name="notes-diff-${NEW_TAG}.md"
+          report_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${NEW_TAG}/${report_name}"
+
+          python3 scripts/diff_notes.py diff \
+            --old "$RUNNER_TEMP/old-notes.csv" \
+            --new "eggrolls-JLPT10k-v3/notes.csv" \
+            --from-tag "$PREVIOUS_TAG" \
+            --to-tag "$NEW_TAG" \
+            > "$RUNNER_TEMP/$report_name"
+
+          python3 scripts/diff_notes.py diff \
+            --old "$RUNNER_TEMP/old-notes.csv" \
+            --new "eggrolls-JLPT10k-v3/notes.csv" \
+            --from-tag "$PREVIOUS_TAG" \
+            --to-tag "$NEW_TAG" \
+            --summary-only \
+            --report-url "$report_url" \
+            > "$RUNNER_TEMP/diff-summary.md"
+
+          echo "REPORT_NAME=$report_name" >> "$GITHUB_ENV"
+
+      - name: Build release body
+        if: steps.guard.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEW_TAG: ${{ steps.tags.outputs.new_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          gh api "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+            --jq ".[] | select(.tag_name == \"${NEW_TAG}\") | .body" \
+            > "$RUNNER_TEMP/existing-body.md"
+
+          python3 scripts/merge_release_body.py \
+            --existing-body "$RUNNER_TEMP/existing-body.md" \
+            --diff "$RUNNER_TEMP/diff-summary.md" \
+            > "$RUNNER_TEMP/release-body.md"
+
+      - name: Create or update draft release
+        if: steps.guard.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEW_TAG: ${{ steps.tags.outputs.new_tag }}
+          DRAFT_EXISTS: ${{ steps.tags.outputs.draft_exists }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git tag -f "$NEW_TAG" "$GITHUB_SHA"
+          git push --force origin "refs/tags/$NEW_TAG"
+
+          if [[ "$DRAFT_EXISTS" == "true" ]]; then
+            gh release edit "$NEW_TAG" \
+              --title "$NEW_TAG" \
+              --notes-file "$RUNNER_TEMP/release-body.md" \
+              --draft
+          else
+            gh release create "$NEW_TAG" \
+              --target "$GITHUB_SHA" \
+              --title "$NEW_TAG" \
+              --notes-file "$RUNNER_TEMP/release-body.md" \
+              --draft
+          fi
+
+          gh release upload "$NEW_TAG" "$RUNNER_TEMP/$REPORT_NAME" --clobber
+
+          echo "Draft release is ready: https://github.com/${GITHUB_REPOSITORY}/releases/tag/${NEW_TAG}"
+
+      - name: Skip notice
+        if: steps.guard.outputs.should_run != 'true'
+        run: echo "No draft release created because this push changed files outside eggrolls-JLPT10k-v3."

@@ -1,6 +1,7 @@
 
 .DS_Store
 *.py
+!scripts/*.py
 *.proto
 /anki
 requirements.txt
