@@ -6,4 +6,5 @@
 /anki
 requirements.txt
 *.apkg
+import-latest-apkg.command
 /__pycache__
