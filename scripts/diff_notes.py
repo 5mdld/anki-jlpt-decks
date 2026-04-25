@@ -377,12 +377,10 @@ def render_diff(args: argparse.Namespace) -> str:
         lines.append("")
 
     if args.summary_only:
-        lines = ["## 详细更新差异", ""]
         if args.report_url:
-            lines.extend([f"[查看完整 Markdown 报告]({args.report_url})", ""])
+            return f"完整更新差异见 [Markdown 报告]({args.report_url})。\n"
         else:
-            lines.extend(["完整 Markdown 报告将在发布附件中提供。", ""])
-        return "\n".join(lines).rstrip() + "\n"
+            return "完整更新差异见 Markdown 报告。\n"
 
     render_section(
         lines,

@@ -29,12 +29,7 @@ def replace_auto_block(body: str, diff: str) -> str:
     if body.strip():
         return body.rstrip() + "\n\n---\n\n" + block + "\n"
 
-    return (
-        "## 本次更新\n\n"
-        "- TODO: 补充手写更新内容。\n\n"
-        "---\n\n"
-        f"{block}\n"
-    )
+    return f"{block}\n"
 
 
 def main() -> int:
