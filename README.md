@@ -16,7 +16,7 @@
 
 本牌组免费发布于 GitHub（本仓库）和 [AnkiWeb](https://ankiweb.net/shared/info/832276382)，并同步上线至 [墨墨记忆卡（Markji）](https://www.markji.com/deck/699faa1d51fa678290828e51)。任何在闲鱼等平台付费售卖本牌组的行为，均为假冒或盗卖，请勿购买。
 
-> 墨墨记忆卡（Markji）是一款类似 Anki 的间隔重复记忆 App，采用 FSRS 作者 Jarrett Ye 参与开发的 MMX 算法。相比 Anki，它更开箱即用，上手难度更低。
+> 墨墨记忆卡（Markji）是一款类似 Anki 的间隔重复记忆 App，采用 FSRS 作者 Jarrett Ye 参与开发的 MMX 算法。相比 Anki，它更开箱即用，上手难度更低。  
 在墨墨记忆卡（Markji）学习牌组会消耗记忆币（可通过签到等方式获取一些免费额度，也可付费购买）。如你使用付费记忆币学习本牌组，作者将按平台规则获得对应收入的 50% 分成；会员等其他付费服务与本牌组无关。
 
 ## 目录
