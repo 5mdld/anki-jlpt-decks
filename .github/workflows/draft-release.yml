@@ -51,9 +51,9 @@ jobs:
           changed_file="$RUNNER_TEMP/changed-files.txt"
 
           if git cat-file -e "${before}^{commit}" 2>/dev/null; then
-            git diff --name-only "$before" "$after" > "$changed_file"
+            git -c core.quotePath=false diff --name-only "$before" "$after" > "$changed_file"
           else
-            git diff-tree --no-commit-id --name-only -r "$after" > "$changed_file"
+            git -c core.quotePath=false diff-tree --no-commit-id --name-only -r "$after" > "$changed_file"
           fi
 
           echo "Changed files:"
