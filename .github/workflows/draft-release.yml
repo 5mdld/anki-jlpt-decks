@@ -146,7 +146,7 @@ jobs:
           fi
 
           report_name="notes-diff-${NEW_TAG}.md"
-          report_url="https://github.com/${GITHUB_REPOSITORY}/blob/release-diffs/${report_name}"
+          report_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${NEW_TAG}/${report_name}"
 
           python3 scripts/diff_notes.py diff \
             --old "$RUNNER_TEMP/old-notes.csv" \
@@ -165,41 +165,6 @@ jobs:
             > "$RUNNER_TEMP/diff-summary.md"
 
           echo "REPORT_NAME=$report_name" >> "$GITHUB_ENV"
-
-      - name: Publish diff report
-        if: steps.guard.outputs.should_run == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          diff_dir="$RUNNER_TEMP/release-diffs"
-          if git ls-remote --exit-code --heads origin release-diffs >/dev/null 2>&1; then
-            git fetch origin release-diffs
-            git worktree add --detach "$diff_dir" origin/release-diffs
-          else
-            git worktree add --detach "$diff_dir" "$GITHUB_SHA"
-            (
-              cd "$diff_dir"
-              git checkout --orphan release-diffs
-              git rm -rf . >/dev/null 2>&1 || true
-            )
-          fi
-
-          cp "$RUNNER_TEMP/$REPORT_NAME" "$diff_dir/$REPORT_NAME"
-
-          (
-            cd "$diff_dir"
-            git add "$REPORT_NAME"
-            if git diff --cached --quiet; then
-              echo "Diff report is unchanged."
-            else
-              git commit -m "Add notes diff $REPORT_NAME"
-              git push origin HEAD:release-diffs
-            fi
-          )
 
       - name: Build release body
         if: steps.guard.outputs.should_run == 'true'
@@ -247,6 +212,8 @@ jobs:
               --notes-file "$RUNNER_TEMP/release-body.md" \
               --draft
           fi
+
+          gh release upload "$NEW_TAG" "$RUNNER_TEMP/$REPORT_NAME" --clobber
 
           echo "Draft release is ready: https://github.com/${GITHUB_REPOSITORY}/releases/tag/${NEW_TAG}"
 
