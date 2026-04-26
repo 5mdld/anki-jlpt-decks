@@ -8,3 +8,4 @@ requirements.txt
 *.apkg
 import-latest-apkg.command
 /__pycache__
+*.pyc

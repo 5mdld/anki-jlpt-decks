@@ -378,9 +378,9 @@ def render_diff(args: argparse.Namespace) -> str:
 
     if args.summary_only:
         if args.report_url:
-            return f"完整更新差异见 [Markdown 报告]({args.report_url})。\n"
+            return f"- 完整卡片差异见 [notes diff]({args.report_url})\n"
         else:
-            return "完整更新差异见 Markdown 报告。\n"
+            return "- 完整卡片差异见 notes diff\n"
 
     render_section(
         lines,
