@@ -148,12 +148,13 @@ jobs:
           report_name="notes-diff-${NEW_TAG}.md"
           report_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${NEW_TAG}/${report_name}"
 
+          printf '\xEF\xBB\xBF' > "$RUNNER_TEMP/$report_name"
           python3 scripts/diff_notes.py diff \
             --old "$RUNNER_TEMP/old-notes.csv" \
             --new "eggrolls-JLPT10k-v3/notes.csv" \
             --from-tag "$PREVIOUS_TAG" \
             --to-tag "$NEW_TAG" \
-            > "$RUNNER_TEMP/$report_name"
+            >> "$RUNNER_TEMP/$report_name"
 
           python3 scripts/diff_notes.py diff \
             --old "$RUNNER_TEMP/old-notes.csv" \
