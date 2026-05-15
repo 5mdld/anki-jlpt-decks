@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "eggrolls-JLPT10k-v3/**"
+      - "deck-source/**"
   workflow_dispatch:
     inputs:
       new_tag:
@@ -59,8 +59,8 @@ jobs:
           echo "Changed files:"
           cat "$changed_file"
 
-          if grep -Ev '^(eggrolls-JLPT10k-v3/)' "$changed_file" >/dev/null; then
-            echo "Push contains files outside eggrolls-JLPT10k-v3; skip draft release."
+          if grep -Ev '^(deck-source/|eggrolls-JLPT10k-[^/]+/)' "$changed_file" >/dev/null; then
+            echo "Push contains files outside deck-source and legacy deck source paths; skip draft release."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -80,9 +80,15 @@ jobs:
 
           git fetch --tags --force
 
+          current_notes="deck-source/notes.csv"
+          if [[ ! -f "$current_notes" ]]; then
+            echo "Could not find current notes.csv: ${current_notes}" >&2
+            exit 1
+          fi
+
           base_tag="$NEW_TAG_INPUT"
           if [[ -z "$base_tag" ]]; then
-            base_tag="$(python3 scripts/diff_notes.py version eggrolls-JLPT10k-v3/notes.csv)"
+            base_tag="$(python3 scripts/diff_notes.py version "$current_notes")"
           fi
 
           previous_tag="$PREVIOUS_TAG_INPUT"
@@ -136,14 +142,24 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git cat-file -e "${PREVIOUS_TAG}:eggrolls-JLPT10k-v3/notes.csv" 2>/dev/null; then
-            git show "${PREVIOUS_TAG}:eggrolls-JLPT10k-v3/notes.csv" > "$RUNNER_TEMP/old-notes.csv"
-          elif git cat-file -e "${PREVIOUS_TAG}:NEW-JLPT/notes.csv" 2>/dev/null; then
-            git show "${PREVIOUS_TAG}:NEW-JLPT/notes.csv" > "$RUNNER_TEMP/old-notes.csv"
-          else
+          current_notes="deck-source/notes.csv"
+          if [[ ! -f "$current_notes" ]]; then
+            echo "Could not find current notes.csv: ${current_notes}" >&2
+            exit 1
+          fi
+
+          previous_notes_path="$(
+            git ls-tree -r --name-only "$PREVIOUS_TAG" |
+              grep -E '^(deck-source|eggrolls-JLPT10k-[^/]+|NEW-JLPT)/notes\.csv$' |
+              sort |
+              head -n 1 ||
+              true
+          )"
+          if [[ -z "$previous_notes_path" ]]; then
             echo "Could not find notes.csv in previous tag ${PREVIOUS_TAG}." >&2
             exit 1
           fi
+          git show "${PREVIOUS_TAG}:${previous_notes_path}" > "$RUNNER_TEMP/old-notes.csv"
 
           report_name="notes-diff-${NEW_TAG}.md"
           report_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${NEW_TAG}/${report_name}"
@@ -151,14 +167,14 @@ jobs:
           printf '\xEF\xBB\xBF' > "$RUNNER_TEMP/$report_name"
           python3 scripts/diff_notes.py diff \
             --old "$RUNNER_TEMP/old-notes.csv" \
-            --new "eggrolls-JLPT10k-v3/notes.csv" \
+            --new "$current_notes" \
             --from-tag "$PREVIOUS_TAG" \
             --to-tag "$NEW_TAG" \
             >> "$RUNNER_TEMP/$report_name"
 
           python3 scripts/diff_notes.py diff \
             --old "$RUNNER_TEMP/old-notes.csv" \
-            --new "eggrolls-JLPT10k-v3/notes.csv" \
+            --new "$current_notes" \
             --from-tag "$PREVIOUS_TAG" \
             --to-tag "$NEW_TAG" \
             --summary-only \
@@ -220,4 +236,4 @@ jobs:
 
       - name: Skip notice
         if: steps.guard.outputs.should_run != 'true'
-        run: echo "No draft release created because this push changed files outside eggrolls-JLPT10k-v3."
+        run: echo "No draft release created because this push changed files outside deck-source and legacy deck source paths."

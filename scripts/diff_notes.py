@@ -409,7 +409,7 @@ def render_diff(args: argparse.Namespace) -> str:
             "### 比较规则",
             "",
             "- 使用 `NoteID` 对齐新旧笔记。",
-            "- 默认忽略形如 `eggrolls-JLPT10k-v3::v26.03.25` 的版本标签。",
+            "- 默认忽略形如 `eggrolls-JLPT10k-*::v26.03.25` 的版本标签。",
             "- 比较前会统一换行符、去掉字段首尾空白，并规范化标签顺序。",
         ]
     )
