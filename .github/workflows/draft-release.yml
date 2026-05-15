@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "deck-source/**"
+      - "eggrolls-JLPT10k-*/**"
   workflow_dispatch:
     inputs:
       new_tag:
