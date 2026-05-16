@@ -183,6 +183,10 @@ deck:eggrolls-JLPT10k-* -tag:eggrolls-JLPT10k-*::v25.01.01
 
 搜索结果可自行删除，或手动添加 del 标签以避免更新检测。
 
+### 从 v3 升级到 v3.5
+
+参考群友 `秋叶` 的更新教程：https://jcn6y2mkxoz3.feishu.cn/wiki/ZpkEwr5qkiD33JkmxBIcVihNnpe
+
 ### 从 v2 升级到 v3
 
 <details>
