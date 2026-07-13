@@ -87,6 +87,7 @@
         other: 'weblio',    // 在其他平台使用 Weblio 国語辞典
       },
       display: 'default',   // 正面单词显示: 'default' 显示汉字和注音假名（如有） | 'kana' 只显示假名 | 'kanji' 只显示汉字
+      frontExamples: 'all', // 正面例句区显示：'none' 无 | 'examples' 仅例句 | 'all' 例句、关联词和反义词
       playback: 'force',    // 背面播放设置: 'default' 跟随牌组的系统设置 | 'force' 强制只播放单词音频
       autoCopy: {           // 背面自动复制: true 开启 | false 关闭
         ipad: true,
@@ -94,7 +95,7 @@
         ankiweb: false,
       },
       tts: {
-        enable: 'fallback', // 在线 TTS 开关: 'always' 始终开启 | 'fallback' 无本地音频时启用 | 'never' 始终关闭
+        enable: 'never',    // 在线 TTS 开关: 'always' 始终开启 | 'fallback' 无本地音频时启用 | 'never' 始终关闭
         hotkey: 'G',        // 播放快捷键，仅支持桌面端
         domain: [
           // 可以添加更多域名，按顺序依次尝试播放
@@ -393,6 +394,27 @@
     return ['{{SentType1}}', '{{SentType2}}', '{{SentType3}}', '{{SentType4}}'][index] || '例'
   }
 
+  function setFrontExamples() {
+    const mode = CONFIG().settings.frontExamples
+    if (mode === 'all') return
+
+    const list = document.querySelector('#FrontSide .SentenceList')
+    if (!list) return
+    if (mode === 'none') {
+      list.style.display = 'none'
+      return
+    }
+    if (mode === 'examples') {
+      let shown = false
+      list.querySelectorAll('.Sentence').forEach((el, i) => {
+        const show = getType(i) === '例'
+        el.style.display = show ? '' : 'none'
+        if (show) shown = true
+      })
+      if (!shown) list.style.display = 'none'
+    }
+  }
+
   function setType() {
     ['.SentKanji', '.SentFurigana', '.SentDef', '.VocabPlus', '.VocabPoS'].forEach(selector => {
       document.querySelectorAll(selector).forEach((el, i) => {
@@ -564,6 +586,7 @@
     setLang()
     setType()
     markWords()
+    setFrontExamples()
     hideKanji()
     removeSpaces()
     checkVersion()
