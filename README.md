@@ -5,7 +5,7 @@
 
 [![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![MARKJI - Deck](https://img.shields.io/badge/MARKJI-Deck-F89632?labelColor=7FC0AD&style=for-the-badge)](https://www.markji.com/deck/699faa1d51fa678290828e51)
-[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+N7bNc8-BpqJjZmQ1)
+[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/+N7bNc8-BpqJjZmQ1)
 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/5mdld)
 
 </div>
@@ -41,7 +41,7 @@
 ### 范围、分类与排序
 
 - 牌组覆盖 JLPT N1 至 N5 全级别，合计约 10,600 词。
-- 基于 2010 年改制后至 2025 年 12 月的 [JLPT 真题](https://t.me/AnkiJapanChannel/762) 整理。
+- 基于 2010 年改制后至 2025 年 12 月的 [JLPT 真题](https://telegram.me/AnkiJapanChannel/762) 整理。
 - N4 与 N5 按作者主观判断由易到难排序。
 - N3 及以上参考 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 词频升序排序。
 
@@ -546,7 +546,7 @@ tts: {
 ## 反馈与交流
 
 - GitHub：可通过 [Issues](https://github.com/5mdld/anki-jlpt-decks/issues) 反馈牌组错误，或通过 [Discussions](https://github.com/5mdld/anki-jlpt-decks/discussions) 进行其他交流。
-- Telegram：[交流群](https://t.me/+N7bNc8-BpqJjZmQ1)
+- Telegram：[交流群](https://telegram.me/+N7bNc8-BpqJjZmQ1)
 - 作者其他 Anki 牌组与插件：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)
 
 ## 友情链接
@@ -556,7 +556,7 @@ tts: {
 - `菜鸡` 的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f)，相关 QQ 讨论群：`830058869`
 - 一款好用的日语电子书阅读器软件 [Hoshi Reader](https://github.com/Manhhao/Hoshi-Reader)：[iOS](https://apps.apple.com/us/app/hoshi-reader/id6758244332) ｜ [Android](https://github.com/HuangAntimony/Hoshi-Reader-Android)
 - `Z` 的语言学习论坛：[Campfirium](https://campfirium.info)
-- `raynor` 的《毎日一問日本語》Telegram 频道：[N1](https://t.me/daily_jlptn1) ｜ [N2](https://t.me/daily_jlptn2) ｜ [N3](https://t.me/daily_jlptn3)
+- `raynor` 的《毎日一問日本語》Telegram 频道：[N1](https://telegram.me/daily_jlptn1) ｜ [N2](https://telegram.me/daily_jlptn2) ｜ [N3](https://telegram.me/daily_jlptn3)
 - `chidaoshu` 的[《おにぎり文法》牌组](https://ankiweb.net/shared/info/1567144169)
 - `叶哥（Jarrett Ye，FSRS 开发者）` 的[知乎文章备份](https://l-m-sherlock.github.io/ZhiHuArchive/)
 
