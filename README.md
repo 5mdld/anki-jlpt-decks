@@ -11,6 +11,8 @@
 
 ## 前言
 
+> 2026-07-30：因[个人原因](https://github.com/5mdld/anki-jlpt-decks/discussions/661)，即日起停止维护 Telegram 频道及群组。牌组仍会进行必要的修正与更新。感谢大家一直以来的陪伴，有缘再见。
+
 这是一个 Anki 日语词汇牌组，收录 JLPT N1~N5 等级约 10,600 个词条，包含释义、例句、单词音频和例句音频，支持 [简繁中文](#使用繁體中文) 显示切换。
 
 本牌组**免费**发布于 GitHub（本仓库）、[AnkiWeb](https://ankiweb.net/shared/info/832276382) 和 [墨墨记忆卡（Markji）](https://www.markji.com/deck/699faa1d51fa678290828e51)。由于各平台的功能与维护方式不同，牌组内容和呈现形式略有差异，请根据自己的使用习惯选择。
