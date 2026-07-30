@@ -5,7 +5,6 @@
 
 [![AnkiWeb - Alt](https://img.shields.io/badge/AnkiWeb-Alt-2e6ce6?labelColor=0b3d91&style=for-the-badge&logo=anki&logoColor=white)](https://ankiweb.net/shared/info/832276382)
 [![MARKJI - Deck](https://img.shields.io/badge/MARKJI-Deck-F89632?labelColor=7FC0AD&style=for-the-badge)](https://www.markji.com/deck/699faa1d51fa678290828e51)
-[![Telegram - Join](https://img.shields.io/badge/Telegram-Join-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://telegram.me/+N7bNc8-BpqJjZmQ1)
 [![Sponsor](https://img.shields.io/badge/Sponsor-❤-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/5mdld)
 
 </div>
@@ -41,7 +40,7 @@
 ### 范围、分类与排序
 
 - 牌组覆盖 JLPT N1 至 N5 全级别，合计约 10,600 词。
-- 基于 2010 年改制后至 2025 年 12 月的 [JLPT 真题](https://telegram.me/AnkiJapanChannel/762) 整理。
+- 基于 2010 年改制后至 2025 年 12 月的 JLPT 真题整理。
 - N4 与 N5 按作者主观判断由易到难排序。
 - N3 及以上参考 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 词频升序排序。
 
@@ -546,7 +545,6 @@ tts: {
 ## 反馈与交流
 
 - GitHub：可通过 [Issues](https://github.com/5mdld/anki-jlpt-decks/issues) 反馈牌组错误，或通过 [Discussions](https://github.com/5mdld/anki-jlpt-decks/discussions) 进行其他交流。
-- Telegram：[交流群](https://telegram.me/+N7bNc8-BpqJjZmQ1)
 - 作者其他 Anki 牌组与插件：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)
 
 ## 友情链接
