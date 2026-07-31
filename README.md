@@ -11,9 +11,10 @@
 
 ## 前言
 
-> 2026-07-30：因[个人原因](https://github.com/5mdld/anki-jlpt-decks/discussions/661)，即日起停止维护 Telegram 频道及群组。牌组仍会进行必要的修正与更新。感谢大家一直以来的陪伴，有缘再见。
+> 2026-07-30：因 [个人原因](https://github.com/5mdld/anki-jlpt-decks/discussions/661) ，即日起停止维护 Telegram 频道及群组。牌组仍会进行必要的修正与更新。感谢大家一直以来的陪伴，有缘再见。
 >
-> 其他群友新建的聊天群：https://t.me/japannomadic 。老群友可自行加入，与本人无关。
+> 其他群友创建的日语交流群（与本人无关）：Telegram 群：https://t.me/japannomadic ｜ QQ 群：830058869
+> 
 
 这是一个 Anki 日语词汇牌组，收录 JLPT N1~N5 等级约 10,600 个词条，包含释义、例句、单词音频和例句音频，支持 [简繁中文](#使用繁體中文) 显示切换。
 
@@ -44,7 +45,7 @@
 ### 范围、分类与排序
 
 - 牌组覆盖 JLPT N1 至 N5 全级别，合计约 10,600 词。
-- 基于 2010 年改制后至 2025 年 12 月的 JLPT 真题整理。
+- 基于 2010 年改制后至 2025 年 12 月的 JLPT 真题整理（[点此下载真题](https://mega.nz/file/Pp4hDaKb#iV2bp99KELdjfUEpUXMfgYkjMBljrzq64ZcjaX2YU88)）。
 - N4 与 N5 按作者主观判断由易到难排序。
 - N3 及以上参考 [JPDB v2.2](https://github.com/Kuuuube/yomitan-dictionaries?tab=readme-ov-file#jpdb-v22-frequency) 词频升序排序。
 
@@ -548,19 +549,8 @@ tts: {
 
 ## 反馈与交流
 
-- GitHub：可通过 [Issues](https://github.com/5mdld/anki-jlpt-decks/issues) 反馈牌组错误，或通过 [Discussions](https://github.com/5mdld/anki-jlpt-decks/discussions) 进行其他交流。
-- 作者其他 Anki 牌组与插件：[AnkiWeb 主页](https://ankiweb.net/shared/by-author/842333142)
-
-## 友情链接
-
-- `MasterOfMasterSword` 的蓝宝书文法牌组等众多牌组：[AnkiWeb](https://ankiweb.net/shared/by-author/1681155450)
-- `uovkm` 的[《综合日语第三版》第一册-第四册单词牌组](https://ankiweb.net/shared/by-author/516873037)
-- `菜鸡` 的[《基于二语习得理论的日语学习指南》](https://eaa9gdwuyv7.feishu.cn/wiki/YeOSwsG7giLuQxkcDFscUXVZn2f)，相关 QQ 讨论群：`830058869`
-- 一款好用的日语电子书阅读器软件 [Hoshi Reader](https://github.com/Manhhao/Hoshi-Reader)：[iOS](https://apps.apple.com/us/app/hoshi-reader/id6758244332) ｜ [Android](https://github.com/HuangAntimony/Hoshi-Reader-Android)
-- `Z` 的语言学习论坛：[Campfirium](https://campfirium.info)
-- `raynor` 的《毎日一問日本語》Telegram 频道：[N1](https://telegram.me/daily_jlptn1) ｜ [N2](https://telegram.me/daily_jlptn2) ｜ [N3](https://telegram.me/daily_jlptn3)
-- `chidaoshu` 的[《おにぎり文法》牌组](https://ankiweb.net/shared/info/1567144169)
-- `叶哥（Jarrett Ye，FSRS 开发者）` 的[知乎文章备份](https://l-m-sherlock.github.io/ZhiHuArchive/)
+- 可通过 [GitHub Issues](https://github.com/5mdld/anki-jlpt-decks/issues) 反馈牌组错误，或通过 [GitHub Discussions](https://github.com/5mdld/anki-jlpt-decks/discussions) 进行其他交流。
+- 作者其他 Anki 牌组与插件：[AnkiWeb](https://ankiweb.net/shared/by-author/842333142)
 
 ## 致谢
 
