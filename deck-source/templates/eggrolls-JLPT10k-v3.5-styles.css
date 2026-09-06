@@ -483,7 +483,7 @@ a.Feedback {
 /* --- iOS 若安装教科书字体开启以下样式 --- */
 .ios .VocabKanji rt,
 .safari .VocabKanji rt {
-  /* transform: 0; */
+  /* transform: none; */
 }
 
 /* --- 安卓平台使用系统默认字体 --- */
