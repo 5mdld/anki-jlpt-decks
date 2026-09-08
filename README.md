@@ -551,7 +551,7 @@ tts: {
 
 ## 致谢
 
-- 感谢捐赠者：`siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ, xiaoduhappy2022`
+- 感谢捐赠者：`siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ, xiaoduhappy2022`, `hhhhhojeihsu`
 - 感谢 `iPumpkin` 对牌组模板的重构、功能添加和维护。
 - 感謝 `ShihHsing Chen` 提供繁體中文資料。
 - 感谢 `YonezawaSama` 提供在线 TTS 语音服务及 apkg 处理脚本。
