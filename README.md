@@ -545,13 +545,13 @@ tts: {
 ## 反馈与交流
 
 - 可通过 [GitHub Issues](https://github.com/5mdld/anki-jlpt-decks/issues) 反馈牌组错误，或通过 [GitHub Discussions](https://github.com/5mdld/anki-jlpt-decks/discussions) 进行其他交流。
-- 作者其他 Anki 牌组与插件：[AnkiWeb](https://ankiweb.net/shared/by-author/842333142)
+- 作者其他牌组与插件：[AnkiWeb](https://ankiweb.net/shared/by-author/842333142)｜[GitHub](https://github.com/5mdld?tab=repositories)
 
 ## 致谢
 
 - 感谢捐赠者：`siriuxy, ShikChen, R4mble, ddmanlin, r****r, mslxl, aknnnnnnn, alsa1755, pStrikeZ, xiaoduhappy2022`, `hhhhhojeihsu`
-- 感谢 `iPumpkin` 对牌组模板的重构、功能添加和维护。
-- 感謝 `ShihHsing Chen` 提供繁體中文資料。
+- 感谢 `iPumpkin` 对牌组模板的重构、功能添加和阶段性维护。
+- 感謝 `ShihHsing Chen` 提供部分繁體中文資料。
 - 感谢 `YonezawaSama` 提供在线 TTS 语音服务及 apkg 处理脚本。
 - 感谢 `Z` 提供词源补充资料。
 - 感谢 `星のカービィ` 提供字体描述文件。
