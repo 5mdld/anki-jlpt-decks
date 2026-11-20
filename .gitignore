@@ -10,3 +10,4 @@ import-latest-apkg.command
 /__pycache__
 *.pyc
 /assets
+/review

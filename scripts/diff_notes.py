@@ -9,6 +9,8 @@ import re
 import sys
 from collections import Counter
 from dataclasses import dataclass
+from difflib import SequenceMatcher
+from html import escape
 from pathlib import Path
 from typing import Iterable
 
@@ -59,6 +61,33 @@ LEGACY_FIELD_COUNT = len(FIELD_NAMES) + 1
 DECK_FIRST_FIELD_COUNT = len(FIELD_NAMES) - 1
 KEY_FIELD = "NoteID"
 VERSION_TAG_RE = re.compile(r"(?:^|::)v(\d{2}\.\d{2}\.\d{2}(?:_\d+)?)$")
+MARKDOWN_INLINE_RE = re.compile(r"([\\`*_\[\]~#])")
+
+FIELD_LABELS = {
+    "VocabKanji": "词形",
+    "VocabPitch": "音调",
+    "VocabPoS": "词性",
+    "VocabFurigana": "读音",
+    "VocabDefSC": "简体释义",
+    "VocabDefTC": "繁体释义",
+    "VocabPlus": "补充说明",
+    "VocabAudio": "单词音频",
+    "Deck": "所属牌组",
+    "Sort": "排序",
+    "Tags": "标签",
+    "Notetype": "笔记类型",
+    "Alt1": "模板开关 Alt1",
+    "Alt2": "模板开关 Alt2",
+}
+
+SENTENCE_FIELD_LABELS = {
+    "SentType": "类型",
+    "SentKanji": "日文",
+    "SentFurigana": "注音",
+    "SentDefSC": "简体译文",
+    "SentDefTC": "繁体译文",
+    "SentAudio": "音频",
+}
 
 CATEGORY_FIELDS = {
     "词条信息": {
@@ -73,26 +102,10 @@ CATEGORY_FIELDS = {
         "VocabDefTC",
     },
     "例句": {
-        "SentType1",
-        "SentKanji1",
-        "SentFurigana1",
-        "SentDefSC1",
-        "SentDefTC1",
-        "SentType2",
-        "SentKanji2",
-        "SentFurigana2",
-        "SentDefSC2",
-        "SentDefTC2",
-        "SentType3",
-        "SentKanji3",
-        "SentFurigana3",
-        "SentDefSC3",
-        "SentDefTC3",
-        "SentType4",
-        "SentKanji4",
-        "SentFurigana4",
-        "SentDefSC4",
-        "SentDefTC4",
+        f"{field}{slot}"
+        for field in SENTENCE_FIELD_LABELS
+        if field != "SentAudio"
+        for slot in range(1, 5)
     },
     "音频": {
         "VocabAudio",
@@ -106,7 +119,8 @@ CATEGORY_FIELDS = {
         "Tags",
         "Sort",
     },
-    "模板开关": {
+    "笔记类型/模板开关": {
+        "Notetype",
         "Alt1",
         "Alt2",
     },
@@ -286,54 +300,87 @@ def first_nonempty(*values: str) -> str:
     return ""
 
 
-def short(value: str, max_length: int = 76) -> str:
-    value = " ".join(value.split())
-    if len(value) <= max_length:
-        return value
-    return value[: max_length - 1] + "..."
+def markdown_text(value: str) -> str:
+    escaped = MARKDOWN_INLINE_RE.sub(r"\\\1", escape(value, quote=False))
+    return escaped.replace("|", "&#124;").replace("\n", "<br>")
 
 
-def note_summary(note: Note) -> str:
-    parts = [note.vocab]
-    if note.furigana and note.furigana != note.vocab:
-        parts.append(note.furigana)
-    if note.definition:
-        parts.append(short(note.definition))
-    return " | ".join(parts)
+def diff_values(old: str, new: str, *, highlight: bool) -> tuple[str, str]:
+    if not (highlight and old and new):
+        return markdown_text(old) or "（空）", markdown_text(new) or "（空）"
+
+    before, after = [], []
+    for change, old_start, old_end, new_start, new_end in SequenceMatcher(
+        None, old, new, autojunk=False
+    ).get_opcodes():
+        old_text = markdown_text(old[old_start:old_end])
+        new_text = markdown_text(new[new_start:new_end])
+        if change != "equal":
+            if old_text:
+                old_text = f"<strong>{old_text}</strong>"
+            if new_text:
+                new_text = f"<strong>{new_text}</strong>"
+        before.append(old_text)
+        after.append(new_text)
+    return "".join(before), "".join(after)
 
 
-def changed_line(old: Note, new: Note, fields: list[str]) -> str:
-    categories = "、".join(categories_for(fields))
-    line = f"- `{new.note_id}` {note_summary(new)} | {categories} | `{', '.join(fields)}`"
-
-    old_def = short(old.definition)
-    new_def = short(new.definition)
-    if old_def != new_def and {"VocabDefSC", "VocabDefTC"} & set(fields):
-        line += f"\n  - 释义：{old_def} -> {new_def}"
-    return line
+def field_label(field: str) -> str:
+    if field.startswith("Sent"):
+        return f"例句 {field[-1]} · {SENTENCE_FIELD_LABELS[field[:-1]]}"
+    return FIELD_LABELS[field]
 
 
-def limited(items: list[str], limit: int) -> tuple[list[str], int]:
-    if limit <= 0 or len(items) <= limit:
-        return items, 0
-    return items[:limit], len(items) - limit
+def render_changed_note(lines: list[str], old: Note, new: Note, fields: list[str]) -> None:
+    lines.extend([f"### {markdown_text(new.vocab)}", ""])
+    metadata = [f"NoteID <code>{markdown_text(new.note_id)}</code>"]
+    if new.furigana and new.furigana != new.vocab and "VocabFurigana" not in fields:
+        metadata.insert(0, f"读音 {markdown_text(new.furigana)}")
+    lines.extend([" · ".join(metadata), ""])
+
+    contexts = []
+    for slot in sorted({field[-1] for field in fields if field.startswith("Sent")}):
+        source = f"SentKanji{slot}"
+        if source not in fields and new.fields[source]:
+            contexts.append(f"- 例句 {slot}「{markdown_text(new.fields[source])}」")
+    if contexts:
+        lines.extend([*contexts, ""])
+
+    lines.extend(["| 改动字段 | 修改前 | 修改后 |", "| --- | --- | --- |"])
+    for field in fields:
+        before, after = diff_values(
+            old.fields[field], new.fields[field], highlight=field not in CATEGORY_FIELDS["音频"]
+        )
+        lines.append(f"| {field_label(field)} | {before} | {after} |")
+    lines.append("")
 
 
-def render_section(lines: list[str], title: str, items: list[str], limit: int) -> None:
-    lines.extend([f"### {title}", ""])
-    if not items:
+def render_note_list(lines: list[str], title: str, notes: list[Note], limit: int) -> None:
+    lines.extend([f"## {title}", ""])
+    if not notes:
         lines.extend(["无。", ""])
         return
-    shown, hidden = limited(items, limit)
-    lines.extend(shown)
-    if hidden:
-        lines.append(f"- ... 另有 {hidden} 条未显示")
+    shown = notes[:limit] if limit > 0 else notes
+    lines.extend(["| 词条 | 读音 | 释义 | NoteID |", "| --- | --- | --- | --- |"])
+    for note in shown:
+        reading = markdown_text(note.furigana) if note.furigana != note.vocab else ""
+        lines.append(
+            f"| {markdown_text(note.vocab)} | {reading or '—'} | "
+            f"{markdown_text(note.definition) or '—'} | <code>{markdown_text(note.note_id)}</code> |"
+        )
     lines.append("")
+    if len(shown) < len(notes):
+        lines.extend([f"另有 {len(notes) - len(shown)} 条未显示。", ""])
 
 
 def render_diff(args: argparse.Namespace) -> str:
     old_notes = read_notes(args.old, include_version_tags=args.include_version_tags)
     new_notes = read_notes(args.new, include_version_tags=args.include_version_tags)
+
+    if args.summary_only:
+        if args.report_url:
+            return f"- 完整卡片差异见 [notes diff]({args.report_url})\n"
+        return "- 完整卡片差异见 notes diff\n"
 
     old_ids = set(old_notes)
     new_ids = set(new_notes)
@@ -343,7 +390,6 @@ def render_diff(args: argparse.Namespace) -> str:
 
     changed: list[tuple[str, list[str]]] = []
     category_counter: Counter[str] = Counter()
-    field_counter: Counter[str] = Counter()
 
     for note_id in common_ids:
         fields = changed_fields(old_notes[note_id], new_notes[note_id])
@@ -351,68 +397,57 @@ def render_diff(args: argparse.Namespace) -> str:
             continue
         changed.append((note_id, fields))
         category_counter.update(categories_for(fields))
-        field_counter.update(fields)
 
-    lines = ["## 自动生成的内容差异", ""]
+    lines = ["# 卡片内容差异", ""]
     if args.from_tag or args.to_tag:
-        lines.extend([f"> 对比范围：`{args.from_tag or 'old'}` -> `{args.to_tag or 'new'}`", ""])
+        old_tag = markdown_text(args.from_tag or "旧版")
+        new_tag = markdown_text(args.to_tag or "新版")
+        lines.extend([f"版本范围 **{old_tag} → {new_tag}**", ""])
 
     lines.extend(
         [
-            "### 摘要",
+            "## 总览",
             "",
-            f"- 旧版笔记数：{len(old_notes)}",
-            f"- 新版笔记数：{len(new_notes)}",
-            f"- 新增：{len(added_ids)}",
-            f"- 删除：{len(deleted_ids)}",
-            f"- 修改：{len(changed)}",
+            "| 旧版笔记数 | 新版笔记数 | [删除](#删除词条) | [新增](#新增词条) | [修改](#修改词条) |",
+            "| ---: | ---: | ---: | ---: | ---: |",
+            f"| {len(old_notes):,} | {len(new_notes):,} | {len(deleted_ids):,} | "
+            f"{len(added_ids):,} | {len(changed):,} |",
             "",
         ]
     )
 
     if category_counter:
-        lines.extend(["### 修改类型", ""])
+        lines.extend(["| 修改类别 | 涉及词条数 |", "| --- | ---: |"])
         for category, count in category_counter.most_common():
-            lines.append(f"- {category}：{count}")
-        lines.append("")
+            lines.append(f"| {category} | {count:,} |")
+        lines.extend(["", "同一词条可计入多个修改类别。", ""])
 
-    if args.summary_only:
-        if args.report_url:
-            return f"- 完整卡片差异见 [notes diff]({args.report_url})\n"
-        else:
-            return "- 完整卡片差异见 notes diff\n"
-
-    render_section(
-        lines,
-        "新增词条",
-        [f"- `{note_id}` {note_summary(new_notes[note_id])}" for note_id in added_ids],
-        args.limit,
-    )
-    render_section(
+    render_note_list(
         lines,
         "删除词条",
-        [f"- `{note_id}` {note_summary(old_notes[note_id])}" for note_id in deleted_ids],
+        [old_notes[note_id] for note_id in deleted_ids],
         args.limit,
     )
-    render_section(
+    render_note_list(
         lines,
-        "修改词条",
-        [
-            changed_line(old_notes[note_id], new_notes[note_id], fields)
-            for note_id, fields in changed
-        ],
+        "新增词条",
+        [new_notes[note_id] for note_id in added_ids],
         args.limit,
     )
 
-    lines.extend(
-        [
-            "### 比较规则",
-            "",
-            "- 使用 `NoteID` 对齐新旧笔记。",
-            "- 默认忽略形如 `eggrolls-JLPT10k-*::v26.03.25` 的版本标签。",
-            "- 比较前会统一换行符、去掉字段首尾空白，并规范化标签顺序。",
-        ]
-    )
+    lines.extend(["## 修改词条", ""])
+    if changed:
+        lines.extend(
+            ["粗体标出文字改动，音频栏列出完整引用。例句编号对应卡片上的栏目。", ""]
+        )
+        shown = changed[: args.limit] if args.limit > 0 else changed
+        for note_id, fields in shown:
+            render_changed_note(lines, old_notes[note_id], new_notes[note_id], fields)
+        if len(shown) < len(changed):
+            lines.extend([f"另有 {len(changed) - len(shown)} 条未显示。", ""])
+    else:
+        lines.extend(["无。", ""])
+
     return "\n".join(lines).rstrip() + "\n"
 
 

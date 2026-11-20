@@ -106,7 +106,6 @@
       'mazii': 'https://mazii.net/zh-TW/search/word/jatw/{query}',  // Mazii [web]
       'jisho': 'https://jisho.org/search/{query}',                  // Jisho [web]
       'kotobank': 'https://kotobank.jp/search?q={query}',           // Kotobank [web]
-      'goo': 'https://dictionary.goo.ne.jp/srch/all/{query}/m0u/',  // Goo 辞書 [web]
       'shirabe': 'shirabelookup://search?w={query}',                // Shirabe Jisho [ios]
     }
 
@@ -148,44 +147,44 @@
     return new Date().toLocaleDateString('sv-SE')
   }
 
-  function setStorage(value) {
-    Object.keys(localStorage)
-      .filter(key => key.startsWith('JLPT_'))
-      .forEach(key => localStorage.removeItem(key))
-    const key = `JLPT_${getToday()}`
-    localStorage.setItem(key, JSON.stringify(value))
-  }
-
-  function getStorage() {
-    const key = `JLPT_${getToday()}`
-    return JSON.parse(localStorage.getItem(key)) || {}
+  function parseVersion(tag) {
+    const date = tag.match(/^v?(\d{2}\.\d{2}\.\d{2})(?:_\S+)?$/)?.[1]
+    return date ? `v${date}` : ''
   }
 
   function getCurrentVersion(tags = '{{Tags}}') {
-    return tags.split(/\s+|::/).find(part => part.startsWith('v')) || ''
+    for (const part of tags.split(/\s+|::/)) {
+      const version = parseVersion(part)
+      if (version) return version
+    }
+    return ''
   }
 
-  async function getLatestReleaseInfo() {
-    let latest
+  async function fetchLatestVersion(state) {
     try {
       const response = await fetch('https://api.github.com/repos/5mdld/anki-jlpt-decks/releases/latest')
       if (!response.ok) throw new Error(response.status)
 
-      const data = await response.json()
-      latest = `v${data.tag_name?.split('_')[0].replace(/^v/, '')}`
+      const { tag_name } = await response.json()
+      const version = parseVersion(tag_name)
+      if (!version) throw new Error('Invalid release tag')
+      state.latest = version
     } catch (err) {
       console.error(err)
     }
-    return { latest }
+    state.nextCheck = Date.now() + 24 * 60 * 60_000
   }
 
   async function checkVersion(force = false) {
     const current = getCurrentVersion()
-    const storage = getStorage()
     const el = document.querySelector('.Feedback')
-
-    const shouldFetch = force || (current && !storage.latest?.startsWith?.('v'))
-    const { latest } = shouldFetch ? await getLatestReleaseInfo().then(res => (setStorage(res), res)) : storage
+    const state = window.jlptVersionCheck ??= { latest: '', nextCheck: 0 }
+    if (!state.pending && (force || (current && Date.now() >= state.nextCheck))) {
+      state.pending = fetchLatestVersion(state).finally(() => { delete state.pending })
+    }
+    if (state.pending) await state.pending
+    const { latest } = state
+    if (!el?.isConnected) return { current, latest }
 
     const shouldShowUpdate = !current || (latest && current < latest)
     const feedbackText = shouldShowUpdate ? '更新' : getTranslation('feedback')
@@ -205,7 +204,7 @@
     feedbackBtn.href = getFeedbackLink()
     feedbackBtn.addEventListener('click', e => {
       const current = getCurrentVersion()
-      const { latest } = getStorage()
+      const latest = window.jlptVersionCheck?.latest
 
       feedbackBtn.href = (!current || (latest && current < latest))
         ? 'https://github.com/5mdld/anki-jlpt-decks/releases/latest'
@@ -318,11 +317,13 @@
   }
 
   function getTags(tags = '{{Tags}}') {
-    const ignoreTags = ['$', '^', 'v']
+    const ignoreTags = ['$', '^']
     const deleteTags = ['del', 'delete', 'remove', 'outdated']
 
     const rawTags = tags.split(/\s+/)
-      .map(tag => tag.split(/::|-/).pop())
+      .map(tag => tag.split('::').pop())
+      .filter(tag => !parseVersion(tag))
+      .map(tag => tag.split('-').pop())
       .filter(tag => tag && !ignoreTags.some(prefix => tag.startsWith(prefix)))
 
     const deleted = rawTags.filter(tag => deleteTags.includes(tag))
@@ -479,6 +480,7 @@
 
   function setEdgeTTS() {
     const { enable, hotkey, domain, params } = CONFIG().settings.tts
+    triggerAudioPlayback(enable === 'never' ? '' : hotkey)
     if (enable === 'never') return
 
     const getVoice = () => {
@@ -519,16 +521,20 @@
         audio.play()
       })
     })
-    triggerAudioPlayback(hotkey)
   }
 
   function triggerAudioPlayback(hotkey) {
-    if (!hotkey) return
+    if (document.jlptAudioKeydown) {
+      document.removeEventListener('keydown', document.jlptAudioKeydown)
+      delete document.jlptAudioKeydown
+    }
+    const card = document.getElementById('BackSide')
+    if (!hotkey || !card) return
 
     let currentAudioIndex = 0
     let isError = false
-    document.addEventListener('keydown', e => {
-      if (e.key.toLowerCase() === hotkey.toLowerCase()) {
+    document.jlptAudioKeydown = e => {
+      if (card.isConnected && e.key.toLowerCase() === hotkey.toLowerCase()) {
         const audios = document.querySelectorAll('.CardSide audio')
         audios.forEach((audio) => {
           audio.pause()
@@ -537,9 +543,11 @@
         if (!isError) currentAudioIndex = 0
         playNext(audios)
       }
-    })
+    }
+    document.addEventListener('keydown', document.jlptAudioKeydown)
+
     function playNext(audios) {
-      if (currentAudioIndex >= audios.length) return
+      if (!card.isConnected || currentAudioIndex >= audios.length) return
       const audio = audios[currentAudioIndex]
       audio.play().then(() => {
         audio.onended = () => {

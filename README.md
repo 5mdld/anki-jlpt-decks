@@ -29,7 +29,6 @@
 - [常见问题](#常见问题)
 - [高级选项](#高级选项)
 - [反馈与交流](#反馈与交流)
-- [友情链接](#友情链接)
 - [致谢](#致谢)
 - [License](#license)
 
@@ -94,7 +93,7 @@ N3 及以上词汇按 JLPT 真题出现次数分为（同一套真题中多次�
 
 本节是 Anki 用户的详细安装说明；墨墨记忆卡（Markji）用户直接打开 [墨墨记忆卡（Markji）牌组页面](https://www.markji.com/deck/699faa1d51fa678290828e51) 即可使用。
 
-0. 请使用官方最新版 Anki 或 AnkiDroid。本牌组不保证兼容旧版 Anki，也不保证兼容 AnkiApp、AnkiPro 等类 Anki 应用。
+0. 请使用官方发布的最新版 Anki 或 AnkiDroid。本牌组不保证兼容旧版 Anki 或其他类似 Anki 的应用。
    > Android 用户请勿使用「Anki 中国」提供的 AnkiDroid v2.16.0beta2，该版本存在兼容性问题。
 
 1. 安装官方 Anki：
@@ -139,7 +138,7 @@ N3 及以上词汇按 JLPT 真题出现次数分为（同一套真题中多次�
 
 ### 更新牌组
 
-稳定版通常每 **1 至 2 个月**发布一次。更新方法是下载最新版 `.apkg` 文件并再次导入 Anki（可参考 [从 v3 升级到 v3.5](#从-v3-升级到-v35) 的前两步）。正常更新不会影响学习进度。
+下载最新版 `.apkg` 文件并再次导入 Anki（可参考 [从 v3 升级到 v3.5](#从-v3-升级到-v35) 的前两步）。正常更新不会影响学习进度。
 
 导入更新时，建议在 Anki 导入选项中设置：
 
@@ -234,7 +233,7 @@ Android 15 及以上系统在导入大量媒体文件时可能明显变慢。可
 
 ### AnkiWeb 提示「Daily limit exceeded; please try again tomorrow.」
 
-表示同一 IP 在 24 小时内已下载超过 25 个牌组。请更换 IP 地址或等待 24 小时后再试。
+触发 AnkiWeb 每日限额，请稍后重试，或从 GitHub Releases 下载。
 
 ### 词典跳转与反馈功能失效
 
@@ -301,7 +300,6 @@ const dictOptions = {
   'mazii': 'https://mazii.net/zh-TW/search/word/jatw/{query}',  // Mazii [web]
   'jisho': 'https://jisho.org/search/{query}',                  // Jisho [web]
   'kotobank': 'https://kotobank.jp/search?q={query}',           // Kotobank [web]
-  'goo': 'https://dictionary.goo.ne.jp/srch/all/{query}/m0u/',  // Goo 辞書 [web]
   'shirabe': 'shirabelookup://search?w={query}',                // Shirabe Jisho [ios]
 }
 ```
@@ -361,10 +359,10 @@ playback: 'force', // 'default' 使用系统设置；'force' 强制背面只播�
 
 ### 隐藏指定字段
 
-在字段名前加 `hint:`。例如隐藏正面的 `SentFurigana` 字段：
+在字段名前加 `hint:`。例如隐藏正面的 `SentFurigana1` 字段：
 
 ```html
-<span lang="ja">{{ hint:SentFurigana }}</span>
+<span lang="ja">{{ hint:SentFurigana1 }}</span>
 ```
 
 ### 设置正面单词显示方式
